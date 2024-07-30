@@ -815,8 +815,30 @@ input[type="radio"]+label:before {
 	width: 100%;
 }
 
+.image2.main {
+	display: block;
+	margin: 2.5rem 0;
+}
+
+.image3.main {
+	display: block;
+	text-align: center;
+}
+
 .image.main img {
 	width: 100%;
+}
+
+.image2.main img {
+	border-radius: 10%;
+	background-color: #000000;
+	opacity: 75%;
+}
+
+.image3.main img {
+	border-radius: 100%;
+	margin-left: auto;
+	margin-right: auto;
 }
 
 @media screen and (max-width: 736px) {
