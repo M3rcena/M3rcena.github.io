@@ -1,221 +1,1076 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
-  <title>Michael F. | Portfolio</title>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-  <meta name="title" content="Michael Farmakis | Portfolio" />
-  <meta name="copyright" content="m3rcena" />
-  <meta name="description"
-    content="Hi, I'm Michael! I'm a Software Engineer just trying to help people through applications that make the world better." />
-  <meta name="keywords" content="portfolio, software engineer, developer, full stack" />
-  <meta name="robots" content="index, follow" />
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <meta name="language" content="English" />
-  <meta name="author" content="Michael F." />
-  <link rel="stylesheet" href="assets/css/main.css" />
-  <noscript>
-    <link rel="stylesheet" href="assets/css/noscript.css" />
-  </noscript>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Michael Farmakis | Software Engineer</title>
+  <meta name="description" content="Software Engineer specializing in full-stack development and quantum computing">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet">
+
+  <!-- Icons and Animations -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="assets/profile.jpg">
+
   <style>
-    .pdf {
+    :root {
+      --primary: #00ffd5;
+      --bg-dark: #0a0a0a;
+      --bg-card: #111111;
+      --text-primary: #e6e6e6;
+      --text-secondary: #9e9e9e;
+      --nav-height: 100px;
+      --gradient: linear-gradient(90deg, #00ffd5 0%, #00b4d8 100%);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Space Grotesk', sans-serif;
+    }
+
+    body {
+      background-color: var(--bg-dark);
+      color: var(--text-primary);
+      overflow-x: hidden;
+    }
+
+    .navbar {
+      position: fixed;
+      top: 0;
       width: 100%;
-      aspect-ratio: 4 / 3;
+      height: var(--nav-height);
+      backdrop-filter: blur(10px);
+      background: rgba(10, 25, 47, 0.85);
+      z-index: 1000;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 5%;
+    }
+
+    .logo {
+      font-size: 2rem;
+      color: var(--primary);
+      text-decoration: none;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+    }
+
+    .nav-links a {
+      color: var(--text-primary);
+      text-decoration: none;
+      font-size: 1rem;
+      transition: color 0.3s ease;
+    }
+
+    .nav-links a:hover {
+      color: var(--primary);
+    }
+
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      padding: 0 10%;
+      padding-top: var(--nav-height);
+    }
+
+    .hero-content {
+      max-width: 800px;
+    }
+
+    .hero-subtitle {
+      color: var(--primary);
+      font-size: 1.2rem;
+      margin-bottom: 1rem;
+    }
+
+    .hero-title {
+      font-size: 4.5rem;
+      margin-bottom: 1rem;
+      line-height: 1.1;
+    }
+
+    .hero-description {
+      color: var(--text-secondary);
+      font-size: 1.2rem;
+      max-width: 600px;
+      margin-bottom: 2rem;
+    }
+
+    .cta-button {
+      background: transparent;
+      border: 1px solid var(--primary);
+      color: var(--primary);
+      padding: 1rem 2rem;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      text-decoration: none;
+      display: inline-block;
+    }
+
+    .cta-button:hover {
+      background: rgba(100, 255, 218, 0.1);
+      transform: translateY(-3px);
+    }
+
+    .section {
+      padding: 100px 10%;
+    }
+
+    .section-title {
+      font-size: 2rem;
+      margin-bottom: 2rem;
+      color: var(--text-primary);
+    }
+
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+    }
+
+    .project-card {
+      background: rgba(255, 255, 255, 0.05);
+      border-radius: 12px;
+      padding: 2rem;
+      transition: transform 0.3s ease;
+    }
+
+    .project-card:hover {
+      transform: translateY(-10px);
+    }
+
+    .project-title {
+      color: var(--text-primary);
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .project-description {
+      color: var(--text-secondary);
+      margin-bottom: 1rem;
+    }
+
+    .tech-stack {
+      display: flex;
+      gap: 1rem;
+      margin-bottom: 1rem;
+    }
+
+    .tech-tag {
+      background: rgba(100, 255, 218, 0.1);
+      color: var(--primary);
+      padding: 0.5rem 1rem;
+      border-radius: 20px;
+      font-size: 0.9rem;
+    }
+
+    .project-links {
+      display: flex;
+      gap: 1rem;
+    }
+
+    .project-links a {
+      color: var(--text-primary);
+      font-size: 1.2rem;
+      transition: color 0.3s ease;
+    }
+
+    .project-links a:hover {
+      color: var(--primary);
+    }
+
+    @media (max-width: 768px) {
+      .hero-title {
+        font-size: 3rem;
+      }
+
+      .nav-links {
+        display: none;
+      }
+    }
+
+    /* New styles for additional sections */
+    .contact-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+      margin-top: 3rem;
+    }
+
+    .contact-card {
+      background: var(--bg-card);
+      border-radius: 12px;
+      padding: 2rem;
+      text-align: center;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      transition: all 0.3s ease;
+    }
+
+    .contact-card:hover {
+      border-color: var(--primary);
+      transform: translateY(-5px);
+    }
+
+    .contact-icon {
+      font-size: 2.5rem;
+      color: var(--primary);
+      margin-bottom: 1rem;
+    }
+
+    .skills-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 2rem;
+      margin-top: 3rem;
+    }
+
+    .skill-card {
+      background: var(--bg-card);
+      border-radius: 12px;
+      padding: 1.5rem;
+      text-align: center;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      transition: all 0.3s ease;
+    }
+
+    .skill-card:hover {
+      border-color: var(--primary);
+      transform: translateY(-5px);
+    }
+
+    .skill-icon {
+      font-size: 2.5rem;
+      color: var(--primary);
+      margin-bottom: 1rem;
+    }
+
+    .timeline {
+      position: relative;
+      max-width: 1200px;
+      margin: 3rem auto;
+    }
+
+    .timeline::after {
+      content: '';
+      position: absolute;
+      width: 2px;
+      background: var(--primary);
+      top: 0;
+      bottom: 0;
+      left: 50%;
+      margin-left: -1px;
+    }
+
+    .timeline-item {
+      padding: 10px 40px;
+      position: relative;
+      width: 50%;
+    }
+
+    .timeline-item::after {
+      content: '';
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      background: var(--primary);
+      border-radius: 50%;
+      top: 15px;
+      z-index: 1;
+    }
+
+    .timeline-item:nth-child(odd) {
+      left: 0;
+    }
+
+    .timeline-item:nth-child(odd)::after {
+      right: -10px;
+    }
+
+    .timeline-item:nth-child(even) {
+      left: 50%;
+    }
+
+    .timeline-item:nth-child(even)::after {
+      left: -10px;
+    }
+
+    .timeline-content {
+      padding: 20px;
+      background: var(--bg-card);
+      border-radius: 12px;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    /* Updated navbar styles */
+    .navbar {
+      background: rgba(10, 10, 10, 0.95);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      padding: 0 5%;
+    }
+
+    /* Improved link styles */
+    a {
+      color: var(--primary);
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
+
+    a:hover {
+      color: #fff;
+      text-shadow: 0 0 8px var(--primary);
+    }
+
+    /* Mobile-friendly timeline */
+    @media (max-width: 768px) {
+      .timeline::after {
+        left: 31px;
+      }
+
+      .timeline-item {
+        width: 100%;
+        padding-left: 70px;
+        padding-right: 25px;
+        left: 0 !important;
+      }
+
+      .timeline-item::after {
+        left: 21px !important;
+        right: auto !important;
+      }
+
+      .timeline-content {
+        width: 100%;
+        word-wrap: break-word;
+      }
+    }
+
+    /* Animated background */
+    .background-animation {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+      opacity: 0.5;
+      pointer-events: none;
+    }
+
+    /* Glowing effect for cards */
+    .project-card,
+    .skill-card,
+    .contact-card {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .project-card::before,
+    .skill-card::before,
+    .contact-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg,
+          transparent,
+          rgba(255, 255, 255, 0.1),
+          transparent);
+      transition: 0.5s;
+    }
+
+    .project-card:hover::before,
+    .skill-card:hover::before,
+    .contact-card:hover::before {
+      left: 100%;
+    }
+
+    /* Custom scrollbar */
+    ::-webkit-scrollbar {
+      width: 10px;
+    }
+
+    ::-webkit-scrollbar-track {
+      background: var(--bg-dark);
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background: var(--primary);
+      border-radius: 5px;
+    }
+
+    /* Floating animation for cards */
+    @keyframes float {
+      0% {
+        transform: translateY(0px);
+      }
+
+      50% {
+        transform: translateY(-10px);
+      }
+
+      100% {
+        transform: translateY(0px);
+      }
+    }
+
+    .skill-card,
+    .contact-card {
+      animation: float 6s ease-in-out infinite;
+    }
+
+    /* Improved navbar with hover effects */
+    .nav-links a {
+      position: relative;
+      padding: 5px 0;
+    }
+
+    .nav-links a::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: var(--primary);
+      transition: width 0.3s ease;
+    }
+
+    .nav-links a:hover::after {
+      width: 100%;
+    }
+
+    /* Custom cursor */
+    .custom-cursor {
+      display: none;
+    }
+
+    /* About section styles */
+    .about-container {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: center;
+      margin-top: 2rem;
+    }
+
+    .about-image-wrapper {
+      position: relative;
+      width: 300px;
+      /* Controlled size */
+      margin: 0 auto;
+    }
+
+    .about-image-container {
+      position: relative;
+      border-radius: 12px;
+      overflow: hidden;
+      background: var(--bg-card);
+    }
+
+    .about-image {
+      width: 100%;
+      height: auto;
+      border-radius: 12px;
+      display: block;
+      transition: transform 0.3s ease;
+    }
+
+    /* Border effect */
+    .about-image-wrapper::after {
+      content: '';
+      position: absolute;
+      top: 15px;
+      left: 15px;
+      right: -15px;
+      bottom: -15px;
+      border: 2px solid var(--primary);
+      border-radius: 12px;
+      z-index: -1;
+      transition: all 0.3s ease;
+    }
+
+    /* Hover effects */
+    .about-image-wrapper:hover::after {
+      top: 10px;
+      left: 10px;
+      right: -10px;
+      bottom: -10px;
+    }
+
+    .about-image-wrapper:hover .about-image {
+      transform: translate(-3px, -3px);
+    }
+
+    .about-content {
+      color: var(--text-secondary);
+    }
+
+    .about-content h3 {
+      color: var(--text-primary);
+      font-size: 2rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .about-content p {
+      margin-bottom: 1.5rem;
+      line-height: 1.6;
+    }
+
+    .about-details {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1rem;
+      margin-top: 2rem;
+    }
+
+    .about-detail-item {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .about-detail-item i {
+      color: var(--primary);
+    }
+
+    /* Mobile responsiveness */
+    @media (max-width: 768px) {
+      .about-container {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+      }
+
+      .about-image-wrapper {
+        width: 250px;
+        /* Smaller on mobile */
+      }
+    }
+
+    /* Contact form styles */
+    .contact-form-container {
+      max-width: 600px;
+      margin: 3rem auto;
+      background: var(--bg-card);
+      padding: 2rem;
+      border-radius: 12px;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      transition: transform 0.3s ease;
+    }
+
+    .contact-form-container:hover {
+      transform: translateY(-5px);
+      border-color: var(--primary);
+    }
+
+    .form-group {
+      margin-bottom: 1.5rem;
+    }
+
+    .form-label {
+      display: block;
+      margin-bottom: 0.5rem;
+      color: var(--text-primary);
+    }
+
+    .form-input,
+    .form-textarea {
+      width: 100%;
+      padding: 0.8rem;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 6px;
+      color: var(--text-primary);
+      font-family: inherit;
+      transition: all 0.3s ease;
+    }
+
+    .form-input:focus,
+    .form-textarea:focus {
+      outline: none;
+      border-color: var(--primary);
+      box-shadow: 0 0 0 2px rgba(0, 255, 213, 0.1);
+    }
+
+    .form-textarea {
+      min-height: 150px;
+      resize: vertical;
+    }
+
+    .submit-button {
+      background: transparent;
+      border: 1px solid var(--primary);
+      color: var(--primary);
+      padding: 1rem 2rem;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      width: 100%;
+      border-radius: 6px;
+    }
+
+    .submit-button:hover {
+      background: rgba(0, 255, 213, 0.1);
+      transform: translateY(-3px);
+    }
+
+    .form-status {
+      text-align: center;
+      margin-top: 1rem;
+      padding: 1rem;
+      border-radius: 6px;
+      display: none;
+    }
+
+    .form-status.success {
+      background: rgba(0, 255, 213, 0.1);
+      color: var(--primary);
+      display: block;
+    }
+
+    .form-status.error {
+      background: rgba(255, 0, 0, 0.1);
+      color: #ff4444;
+      display: block;
+    }
+
+    /* Updated Contact form styles */
+    .contact-form-container {
+      max-width: 600px;
+      margin: 3rem auto;
+      background: var(--bg-card);
+      padding: 2rem;
+      border-radius: 12px;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      transition: transform 0.3s ease;
+    }
+
+    /* Add responsive padding */
+    @media (max-width: 768px) {
+      .contact-form-container {
+        margin: 3rem 1rem;
+        /* Add horizontal margin on mobile */
+        padding: 1.5rem;
+        /* Slightly reduce padding on mobile */
+        max-width: calc(100% - 2rem);
+        /* Account for margins */
+      }
+
+      .form-group {
+        margin-bottom: 1rem;
+        /* Slightly reduce spacing on mobile */
+      }
+
+      .submit-button {
+        padding: 0.8rem 1.5rem;
+        /* Slightly reduce button padding */
+      }
+    }
+
+    /* Update the section padding for better mobile responsiveness */
+    .section {
+      padding: 100px 10%;
+    }
+
+    @media (max-width: 768px) {
+      .section {
+        padding: 60px 5%;
+        /* Reduced padding but still maintains space from edges */
+      }
+
+      .contact-form-container {
+        margin: 3rem auto;
+        /* Center the form */
+        width: 90%;
+        /* Take up most of the width while maintaining margins */
+        max-width: 600px;
+      }
+    }
+
+    .footer {
+      text-align: center;
+      padding: 2rem 0;
+      background: var(--bg-dark);
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      margin-top: 4rem;
+    }
+
+    .copyright {
+      color: var(--text-secondary);
+      font-size: 0.9rem;
+    }
+
+    .copyright a {
+      color: var(--primary);
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
+
+    .copyright a:hover {
+      color: #fff;
+      text-shadow: 0 0 8px var(--primary);
+    }
+
+    .footer-content {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 2rem;
     }
   </style>
 </head>
 
-<body class="is-preload">
-  <!-- Wrapper -->
-  <div id="wrapper">
-    <!-- Header -->
-    <header id="header">
-      <div class="logo">
-        <span class="icon fa-gem"></span>
-      </div>
-      <div class="content">
-        <div class="inner">
-          <h1>Michael Farmakis</h1>
-          <p>
-            Hello, I'm Michael! <br />I'm a Software Engineer just trying to
-            help people through applications that make the world better.<br />
-            WELCOME!
-          </p>
-        </div>
-      </div>
-      <nav>
-        <ul>
-          <li><a href="#about">About</a></li>
-          <li><a href="#work">Work</a></li>
-          <li><a href="#blog">Blog</a></li>
-          <li><a href="#studies">Studies</a></li>
-          <li><a href="#cv">CV</a></li>
-          <li><a href="#contact">Contact</a></li>
-        </ul>
-      </nav>
-    </header>
-
-    <!-- Main -->
-    <div id="main">
-      <!-- About -->
-      <article id="about">
-        <h2 class="major">About</h2>
-        <span class="image3 main"><img width="200px" height="200px" src="images/pic01.jpg" alt="" /></span>
-        <p>
-          I'm a Senior Full-Stack Software Engineer based out of
-          Athens/Greece, that loves to learn and create things that live on
-          the internet! I believe that we can use what we love to do to help
-          others and make the world a better place, and I choose to do that
-          through code. I focus on large-scale NodeJS applications and am
-          skilled in Java, TypeScript, JavaScript, Python, React,
-          PostgreSQL, Bash, HTML, CSS, Tailwind
-          CSS and Qiskit. Check out my work and feel free to reach out!
-        </p>
-      </article>
-
-      <!-- Work -->
-      <article id="work">
-        <div>
-          <h2 class="major">Weky</h2>
-          <span class="image2 main"><img
-              src="https://raw.githubusercontent.com/M3rcena/m3rcena-weky/main/assets/logo.png" width="250px"
-              height="250px" alt="" /></span>
-          <a id="workLink" href="https://github.com/M3rcena/m3rcena-weky" target="_blank"><button
-              id="workLink">Github</button></a>
-          <a id="workLink" href="https://www.npmjs.com/package/@m3rcena/weky" target="_blank"><button id="workLink">NPM
-              Package</button></a>
-          <a id="workLink" href="https://discord.gg/Wp54QUTgBV" target="_blank"><button id="workLink">Discord
-              Support</button></a>
-        </div>
-        <br />
-        <div>
-          <h2 class="major">Java Fundamentals</h2>
-          <span class="image main"><img src="images/work/java_course.jpg" alt="" /></span>
-          <a id="workLink" href="https://github.com/M3rcena/Java-Tutorial" target="_blank"><button
-              id="workLink">Github</button></a>
-        </div>
-
-      </article>
-
-      <!-- Blog -->
-      <article id="blog">
-        <h2 class="major">Blog</h2>
-        <span class="image main"><img src="images/pic03.jpg" alt="" /></span>
-        <p>Coming Soon!</p>
-      </article>
-
-      <!-- Studies -->
-      <article id="studies">
-        <h2 class="major">Studies</h2>
-        <div>
-          <h4><strong>Introduction to Quantum Computing | Semester 2</strong></h4>
-          <h4 style="color: grey;"><i>Qubit by Qubit, The Coding School</i> [08/01/2023 – 24/04/2023]</h4>
-          <strong>Address: </strong>3940 Laurel Canyon Blvd. Ste 153, 91604 Los Angeles, CA (United States)<br>
-          <strong>Website: </strong><a href="https://www.qubitbyqubit.org/"
-            target="_blank">https://www.qubitbyqubit.org/</a>
-        </div>
-        <br>
-        <div style="border-top: 4px solid rgba(0, 0, 0, 0.3);"> </div>
-        <br>
-        <div>
-          <h4><strong>Introduction to Quantum Computing | Semester 1</strong></h4>
-          <h4 style="color: grey;"><i>Qubit by Qubit, The Coding School</i> [18/09/2022 – 17/12/2022]</h4>
-          <strong>Address: </strong>3940 Laurel Canyon Blvd. Ste 153, 91604 Los Angeles, CA (United States)<br>
-          <strong>Website: </strong><a href="https://www.qubitbyqubit.org/"
-            target="_blank">https://www.qubitbyqubit.org/</a>
-        </div>
-        <br>
-        <div style="border-top: 4px solid rgba(0, 0, 0, 0.3);"> </div>
-        <br>
-        <div>
-          <h4><strong>High School Diploma</strong></h4>
-          <h4 style="color: grey;"><i>3o Gimnasio Ilioupolis</i> [11/09/2019 – 22/05/2022]</h4>
-          <strong>Address: </strong>Leof. Marinou Antipa 77, 163 45 Ilioupoli (Greece)<br>
-          <strong>Website: </strong><a href="http://3gym-ilioup.att.sch.gr/"
-            target="_blank">http://3gym-ilioup.att.sch.gr/</a>
-        </div>
-      </article>
-
-      <!-- CV -->
-      <article id="cv">
-        <h2 class="major">CV</h2>
-        <embed class="pdf"
-          src="https://drive.google.com/viewerng/viewer?embedded=true&url=https://raw.githubusercontent.com/M3rcena/M3rcena.github.io/84f77e2037ab396bb35eb7dc2379fc0e99136210/assets/cv/CV_MICHAEL_FARMAKIS_EN.pdf" />
-      </article>
-
-      <!-- Contact -->
-      <article id="contact">
-        <h2 class="major">Contact</h2>
-        <form method="post" action="https://formspree.io/f/xqkrwepq">
-          <div class="fields">
-            <div class="field half">
-              <label for="name">Name</label>
-              <input type="text" name="name" id="name" />
-            </div>
-            <div class="field half">
-              <label for="email">Email</label>
-              <input type="text" name="email" id="email" />
-            </div>
-            <div class="field">
-              <label for="message">Message</label>
-              <textarea name="message" id="message" rows="4"></textarea>
-            </div>
-          </div>
-          <ul class="actions">
-            <li>
-              <input type="submit" value="Send Message" class="primary" />
-            </li>
-            <li><input type="reset" value="Reset" /></li>
-          </ul>
-        </form>
-        <ul class="icons">
-          <li>
-            <a href="https://www.linkedin.com/in/michael-farmakis-b1ab31269/" target="_blank" class="icon brands fa-linkedin"><span
-                class="label">LinkedIn</span></a>
-          </li>
-          <li>
-            <a href="https://discord.com/users/682983233851228161" target="_blank" class="icon brands fa-discord"><span
-                class="label">Discord</span></a>
-          </li>
-          <li>
-            <a href="https://github.com/M3rcena" target="_blank" class="icon brands fa-github"><span class="label">GitHub</span></a>
-          </li>
-        </ul>
-      </article>
+<body>
+  <nav class="navbar">
+    <a href="#" class="logo">MF.</a>
+    <div class="nav-links">
+      <a href="#about">About</a>
+      <a href="#projects">Projects</a>
+      <a href="#experience">Experience</a>
+      <a href="#contact">Contact</a>
     </div>
+  </nav>
 
-    <!-- Footer -->
-    <footer id="footer">
-      <ul class="icons">
-        <li>
-          <a href="https://www.linkedin.com/in/michael-farmakis-b1ab31269/" target="_blank" class="icon brands fa-linkedin"><span
-              class="label">LinkedIn</span></a>
-        </li>
-        <li>
-          <a href="https://discord.com/users/682983233851228161" target="_blank" class="icon brands fa-discord"><span
-              class="label">Discord</span></a>
-        </li>
-        <li>
-          <a href="https://github.com/M3rcena" target="_blank" class="icon brands fa-github"><span class="label">GitHub</span></a>
-        </li>
-      </ul>
-      <p class="copyright">
-        &copy; m3rcena.github.io Design:
-        <a href="https://html5up.net">HTML5 UP</a>.
+  <section class="hero">
+    <div class="hero-content" data-aos="fade-up">
+      <p class="hero-subtitle">Hi, my name is</p>
+      <h1 class="hero-title">Michael Farmakis.<br>I build things for the web.</h1>
+      <p class="hero-description">
+        I'm a Senior Full-Stack Software Engineer specializing in building exceptional digital experiences.
+        Currently, I'm focused on building accessible, human-centered products.
       </p>
-    </footer>
+      <a href="#projects" class="cta-button">Check out my work</a>
+    </div>
+  </section>
+
+  <section id="about" class="section">
+    <h2 class="section-title" data-aos="fade-up">About Me</h2>
+    <div class="about-container">
+      <div class="about-image-wrapper" data-aos="fade-right">
+        <div class="about-image-container">
+          <img src="assets/profile.jpg" alt="Michael Farmakis" class="about-image">
+        </div>
+      </div>
+      <div class="about-content" data-aos="fade-left">
+        <h3>Get to know me!</h3>
+        <p>
+          Hi! I'm Michael Farmakis, a passionate Software Engineer based in Greece.
+          With over 2 years of experience in full-stack development, I've had the privilege
+          of working on diverse projects that have shaped my expertise in creating robust
+          and scalable solutions.
+        </p>
+        <p>
+          My journey in technology began with a passion for programming. Today, I specialize
+          in building exceptional digital experiences that combine clean code with
+          user-centered design principles.
+        </p>
+        <div class="about-details">
+          <div class="about-detail-item">
+            <i class="fas fa-map-marker-alt"></i>
+            <span>Based in Greece</span>
+          </div>
+          <div class="about-detail-item">
+            <i class="fas fa-graduation-cap"></i>
+            <span>Computer Applications Technician [VHS]</span>
+          </div>
+          <div class="about-detail-item">
+            <i class="fas fa-briefcase"></i>
+            <span>2+ Years of Experience</span>
+          </div>
+          <div class="about-detail-item">
+            <i class="fas fa-code-branch"></i>
+            <span>Full-Stack Development</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="projects" class="section">
+    <h2 class="section-title" data-aos="fade-up">Featured Projects</h2>
+    <div class="projects-grid">
+      <div class="project-card" data-aos="fade-up">
+        <h3 class="project-title">Weky</h3>
+        <p class="project-description">
+          A powerful Discord mini-games package with extensive features and customization options.
+        </p>
+        <div class="tech-stack">
+          <span class="tech-tag">Node.js</span>
+          <span class="tech-tag">Discord.js</span>
+        </div>
+        <div class="project-links">
+          <a href="https://github.com/M3rcena/m3rcena-weky" target="_blank">
+            <i class="fab fa-github"></i>
+          </a>
+          <a href="https://www.npmjs.com/package/@m3rcena/weky" target="_blank">
+            <i class="fab fa-npm"></i>
+          </a>
+        </div>
+      </div>
+      <!-- Add more project cards here -->
+    </div>
+  </section>
+
+  <section id="skills" class="section">
+    <h2 class="section-title" data-aos="fade-up">Skills & Technologies</h2>
+    <div class="skills-container">
+      <div class="skill-card" data-aos="fade-up">
+        <i class="fab fa-react skill-icon"></i>
+        <h3>Frontend Development</h3>
+        <p>React, Vue, Angular</p>
+      </div>
+      <div class="skill-card" data-aos="fade-up" data-aos-delay="100">
+        <i class="fab fa-node-js skill-icon"></i>
+        <h3>Backend Development</h3>
+        <p>Node.js, Python, Java</p>
+      </div>
+      <div class="skill-card" data-aos="fade-up" data-aos-delay="200">
+        <i class="fas fa-database skill-icon"></i>
+        <h3>Databases</h3>
+        <p>MongoDB, PostgreSQL</p>
+      </div>
+      <!-- Add more skill cards as needed -->
+    </div>
+  </section>
+
+  <section id="experience" class="section">
+    <h2 class="section-title" data-aos="fade-up">Studies</h2>
+    <div class="timeline">
+      <div class="timeline-item" data-aos="fade-right">
+        <div class="timeline-content">
+          <h3>Introduction to Quantum Computing | Semester 2</h3>
+          <p>Qubit by Qubit</p>
+          <p>2023</p>
+          <p>Mastered Quantum Mechanics, coding in Qiskit, and applications of quantum computing.</p>
+        </div>
+      </div>
+      <div class="timeline-item" data-aos="fade-left">
+        <div class="timeline-content">
+          <h3>Introduction to Quantum Computing | Semester 1 </h3>
+          <p>Qubit by Qubit</p>
+          <p>2022</p>
+          <p>Studied Quantum Mechanics, coding in Qiskit, and applications of quantum computing.</p>
+        </div>
+      </div>
+      <!-- Add more timeline items as needed -->
+    </div>
+  </section>
+
+  <section id="contact" class="section">
+    <h2 class="section-title" data-aos="fade-up">Get In Touch</h2>
+    <div class="contact-grid">
+      <div class="contact-card" data-aos="fade-up">
+        <i class="fas fa-envelope contact-icon"></i>
+        <h3>Email</h3>
+        <a href="mailto:michaelfarmakis2007@gmail.com">michaelfarmakis2007@gmail.com</a>
+      </div>
+      <div class="contact-card" data-aos="fade-up" data-aos-delay="100">
+        <i class="fab fa-linkedin contact-icon"></i>
+        <h3>LinkedIn</h3>
+        <a href="https://www.linkedin.com/in/michael-farmakis-b1ab31269/" target="_blank">Connect with me</a>
+      </div>
+      <div class="contact-card" data-aos="fade-up" data-aos-delay="200">
+        <i class="fab fa-github contact-icon"></i>
+        <h3>GitHub</h3>
+        <a href="https://github.com/M3rcena" target="_blank">View my repositories</a>
+      </div>
+    </div>
+  </section>
+
+  <div class="contact-form-container" data-aos="fade-up">
+    <h3 class="section-title">Send me a message</h3>
+    <form action="https://formspree.io/f/xqkrwepq" method="POST" id="contact-form">
+      <div class="form-group">
+        <label for="name" class="form-label">Name</label>
+        <input type="text" id="name" name="name" class="form-input" required>
+      </div>
+      <div class="form-group">
+        <label for="email" class="form-label">Email</label>
+        <input type="email" id="email" name="email" class="form-input" required>
+      </div>
+      <div class="form-group">
+        <label for="message" class="form-label">Message</label>
+        <textarea id="message" name="message" class="form-textarea" required></textarea>
+      </div>
+      <!-- Add hidden Formspree-specific fields -->
+      <input type="hidden" name="_format" value="plain">
+      <input type="text" name="_gotcha" style="display:none">
+      <button type="submit" class="submit-button">Send Message</button>
+      <div class="form-status"></div>
+    </form>
   </div>
 
-  <!-- BG -->
-  <div id="bg"></div>
-
   <!-- Scripts -->
-  <script src="assets/js/jquery.min.js"></script>
-  <script src="assets/js/browser.min.js"></script>
-  <script src="assets/js/breakpoints.min.js"></script>
-  <script src="assets/js/util.js"></script>
-  <script src="assets/js/main.js"></script>
+  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+  <script>
+    AOS.init({
+      duration: 1000,
+      once: true,
+      offset: 100,
+      easing: 'ease-out-cubic'
+    });
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+          behavior: 'smooth'
+        });
+      });
+    });
+  </script>
+
+  <!-- Add animated background div -->
+  <div class="background-animation" id="particles-js"></div>
+
+  <!-- Add this before closing body tag -->
+  <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+  <script>
+    // Initialize particles.js
+    particlesJS('particles-js', {
+      particles: {
+        number: { value: 80, density: { enable: true, value_area: 800 } },
+        color: { value: '#00ffd5' },
+        shape: { type: 'circle' },
+        opacity: { value: 0.5, random: false },
+        size: { value: 3, random: true },
+        line_linked: {
+          enable: true,
+          distance: 150,
+          color: '#00ffd5',
+          opacity: 0.4,
+          width: 1
+        },
+        move: {
+          enable: true,
+          speed: 2,
+          direction: 'none',
+          random: false,
+          straight: false,
+          out_mode: 'out',
+          bounce: false
+        }
+      },
+      interactivity: {
+        detect_on: 'canvas',
+        events: {
+          onhover: { enable: true, mode: 'repulse' },
+          onclick: { enable: true, mode: 'push' },
+          resize: true
+        }
+      },
+      retina_detect: true
+    });
+
+    // Enhance scroll animations
+    AOS.init({
+      duration: 1000,
+      once: false,
+      mirror: true,
+      offset: 100,
+      easing: 'ease-out-cubic',
+      anchorPlacement: 'top-bottom'
+    });
+
+    // Add scroll progress indicator
+    const progressBar = document.createElement('div');
+    progressBar.style.cssText = `
+        position: fixed;
+        top: 0;
+        left: 0;
+        height: 3px;
+        background: var(--primary);
+        z-index: 1001;
+        transition: width 0.2s ease;
+    `;
+    document.body.appendChild(progressBar);
+
+    window.addEventListener('scroll', () => {
+      const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+      const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+      const scrolled = (winScroll / height) * 100;
+      progressBar.style.width = scrolled + '%';
+    });
+  </script>
+
+  <script>
+    const form = document.getElementById('contact-form');
+    const formStatus = document.querySelector('.form-status');
+
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      formStatus.className = "form-status";
+      formStatus.textContent = "Sending...";
+
+      try {
+        const response = await fetch(form.action, {
+          method: 'POST',
+          body: new FormData(form),
+          headers: {
+            'Accept': 'application/json'
+          }
+        });
+
+        if (response.ok) {
+          formStatus.textContent = "Thanks for your submission!";
+          formStatus.className = "form-status success";
+          form.reset();
+        } else {
+          const data = await response.json();
+          throw new Error(data.error || 'Something went wrong');
+        }
+      } catch (error) {
+        formStatus.textContent = "Oops! There was a problem submitting your form. Please try again.";
+        formStatus.className = "form-status error";
+        console.error('Error:', error);
+      }
+    });
+
+    // Form input animations
+    const inputs = document.querySelectorAll('.form-input, .form-textarea');
+
+    inputs.forEach(input => {
+      input.addEventListener('focus', () => {
+        input.parentElement.classList.add('focused');
+      });
+
+      input.addEventListener('blur', () => {
+        if (!input.value) {
+          input.parentElement.classList.remove('focused');
+        }
+      });
+    });
+  </script>
+
+  <footer class="footer">
+    <div class="footer-content">
+      <p class="copyright">
+        © <span id="year"></span> Michael Farmakis. All rights reserved.
+        <br><br>Built with <i class="fas fa-heart" style="color: var(--primary);"></i>
+      </p>
+    </div>
+  </footer>
+
+  <script>
+    // Automatically update the year
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
 </body>
 
 </html>
