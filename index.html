@@ -6,23 +6,37 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Michael Farmakis | Software Engineer</title>
   <meta name="description" content="Software Engineer specializing in full-stack development and quantum computing">
-  <meta name="trustpilot-one-time-domain-verification-id" content="8162e3cf-ea12-4acd-9a08-8041a28f798a"/>
+  <meta name="trustpilot-one-time-domain-verification-id" content="8162e3cf-ea12-4acd-9a08-8041a28f798a" />
 
-  <!-- Fonts -->
+  <!-- Preload critical resources -->
+  <link rel="preload"
+    href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" as="style">
+  <link rel="preload" href="assets/profile.jpg" as="image">
+
+  <!-- Fonts with display swap -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap"
-    rel="stylesheet">
+    rel="stylesheet" media="print" onload="this.media='all'">
 
-  <!-- Icons and Animations -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+  <!-- Icons and Animations - Load asynchronously -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" media="print"
+    onload="this.media='all'">
+  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" media="print" onload="this.media='all'">
 
   <!-- Favicon -->
   <link rel="icon" type="image/png" href="assets/profile.jpg">
 
   <!-- Google Analytics -->
   <meta name="google-site-verification" content="MOlgyRbz7Op_6r8GSaL_b-5yyLGaKb4bGwmIF-k6-Sg" />
+
+  <!-- Fallback for async CSS -->
+  <noscript>
+    <link rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css">
+  </noscript>
 
   <style>
     :root {
@@ -921,146 +935,139 @@
   </div>
 
   <!-- Scripts -->
-  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-  <script>
-    AOS.init({
-      duration: 1000,
-      once: true,
-      offset: 100,
-      easing: 'ease-out-cubic'
-    });
+  <script src="https://unpkg.com/aos@next/dist/aos.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js" defer></script>
+  <script defer>
+    // Initialize AOS
+    document.addEventListener('DOMContentLoaded', function () {
+      AOS.init({
+        duration: 1000,
+        once: true,
+        offset: 100,
+        easing: 'ease-out-cubic'
+      });
 
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-      anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        document.querySelector(this.getAttribute('href')).scrollIntoView({
-          behavior: 'smooth'
+      // Smooth scroll
+      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+          e.preventDefault();
+          document.querySelector(this.getAttribute('href')).scrollIntoView({
+            behavior: 'smooth'
+          });
         });
       });
+
+      // Initialize particles.js
+      particlesJS('particles-js', {
+        particles: {
+          number: { value: 80, density: { enable: true, value_area: 800 } },
+          color: { value: '#00ffd5' },
+          shape: { type: 'circle' },
+          opacity: { value: 0.5, random: false },
+          size: { value: 3, random: true },
+          line_linked: {
+            enable: true,
+            distance: 150,
+            color: '#00ffd5',
+            opacity: 0.4,
+            width: 1
+          },
+          move: {
+            enable: true,
+            speed: 2,
+            direction: 'none',
+            random: false,
+            straight: false,
+            out_mode: 'out',
+            bounce: false
+          }
+        },
+        interactivity: {
+          detect_on: 'canvas',
+          events: {
+            onhover: { enable: true, mode: 'repulse' },
+            onclick: { enable: true, mode: 'push' },
+            resize: true
+          }
+        },
+        retina_detect: true
+      });
+
+      // Add scroll progress indicator
+      const progressBar = document.createElement('div');
+      progressBar.style.cssText = `
+          position: fixed;
+          top: 0;
+          left: 0;
+          height: 3px;
+          background: var(--primary);
+          z-index: 1001;
+          transition: width 0.2s ease;
+      `;
+      document.body.appendChild(progressBar);
+
+      window.addEventListener('scroll', () => {
+        const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+        const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+        const scrolled = (winScroll / height) * 100;
+        progressBar.style.width = scrolled + '%';
+      });
+
+      // Form handling
+      const form = document.getElementById('contact-form');
+      const formStatus = document.querySelector('.form-status');
+
+      form.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        formStatus.className = "form-status";
+        formStatus.textContent = "Sending...";
+
+        try {
+          const response = await fetch(form.action, {
+            method: 'POST',
+            body: new FormData(form),
+            headers: {
+              'Accept': 'application/json'
+            }
+          });
+
+          if (response.ok) {
+            formStatus.textContent = "Thanks for your submission!";
+            formStatus.className = "form-status success";
+            form.reset();
+          } else {
+            const data = await response.json();
+            throw new Error(data.error || 'Something went wrong');
+          }
+        } catch (error) {
+          formStatus.textContent = "Oops! There was a problem submitting your form. Please try again.";
+          formStatus.className = "form-status error";
+          console.error('Error:', error);
+        }
+      });
+
+      // Form input animations
+      const inputs = document.querySelectorAll('.form-input, .form-textarea');
+
+      inputs.forEach(input => {
+        input.addEventListener('focus', () => {
+          input.parentElement.classList.add('focused');
+        });
+
+        input.addEventListener('blur', () => {
+          if (!input.value) {
+            input.parentElement.classList.remove('focused');
+          }
+        });
+      });
+
+      // Update year
+      document.getElementById('year').textContent = new Date().getFullYear();
     });
   </script>
 
   <!-- Add animated background div -->
   <div class="background-animation" id="particles-js"></div>
-
-  <!-- Add this before closing body tag -->
-  <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
-  <script>
-    // Initialize particles.js
-    particlesJS('particles-js', {
-      particles: {
-        number: { value: 80, density: { enable: true, value_area: 800 } },
-        color: { value: '#00ffd5' },
-        shape: { type: 'circle' },
-        opacity: { value: 0.5, random: false },
-        size: { value: 3, random: true },
-        line_linked: {
-          enable: true,
-          distance: 150,
-          color: '#00ffd5',
-          opacity: 0.4,
-          width: 1
-        },
-        move: {
-          enable: true,
-          speed: 2,
-          direction: 'none',
-          random: false,
-          straight: false,
-          out_mode: 'out',
-          bounce: false
-        }
-      },
-      interactivity: {
-        detect_on: 'canvas',
-        events: {
-          onhover: { enable: true, mode: 'repulse' },
-          onclick: { enable: true, mode: 'push' },
-          resize: true
-        }
-      },
-      retina_detect: true
-    });
-
-    // Enhance scroll animations
-    AOS.init({
-      duration: 1000,
-      once: false,
-      mirror: true,
-      offset: 100,
-      easing: 'ease-out-cubic',
-      anchorPlacement: 'top-bottom'
-    });
-
-    // Add scroll progress indicator
-    const progressBar = document.createElement('div');
-    progressBar.style.cssText = `
-        position: fixed;
-        top: 0;
-        left: 0;
-        height: 3px;
-        background: var(--primary);
-        z-index: 1001;
-        transition: width 0.2s ease;
-    `;
-    document.body.appendChild(progressBar);
-
-    window.addEventListener('scroll', () => {
-      const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
-      const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-      const scrolled = (winScroll / height) * 100;
-      progressBar.style.width = scrolled + '%';
-    });
-  </script>
-
-  <script>
-    const form = document.getElementById('contact-form');
-    const formStatus = document.querySelector('.form-status');
-
-    form.addEventListener('submit', async (e) => {
-      e.preventDefault();
-      formStatus.className = "form-status";
-      formStatus.textContent = "Sending...";
-
-      try {
-        const response = await fetch(form.action, {
-          method: 'POST',
-          body: new FormData(form),
-          headers: {
-            'Accept': 'application/json'
-          }
-        });
-
-        if (response.ok) {
-          formStatus.textContent = "Thanks for your submission!";
-          formStatus.className = "form-status success";
-          form.reset();
-        } else {
-          const data = await response.json();
-          throw new Error(data.error || 'Something went wrong');
-        }
-      } catch (error) {
-        formStatus.textContent = "Oops! There was a problem submitting your form. Please try again.";
-        formStatus.className = "form-status error";
-        console.error('Error:', error);
-      }
-    });
-
-    // Form input animations
-    const inputs = document.querySelectorAll('.form-input, .form-textarea');
-
-    inputs.forEach(input => {
-      input.addEventListener('focus', () => {
-        input.parentElement.classList.add('focused');
-      });
-
-      input.addEventListener('blur', () => {
-        if (!input.value) {
-          input.parentElement.classList.remove('focused');
-        }
-      });
-    });
-  </script>
 
   <footer class="footer">
     <div class="footer-content">
@@ -1070,11 +1077,6 @@
       </p>
     </div>
   </footer>
-
-  <script>
-    // Automatically update the year
-    document.getElementById('year').textContent = new Date().getFullYear();
-  </script>
 </body>
 
 </html>
