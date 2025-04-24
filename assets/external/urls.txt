@@ -1,0 +1,5 @@
+css2.css: https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap
+all.min.css: https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css
+aos.css: https://unpkg.com/aos@next/dist/aos.css
+aos.js: https://unpkg.com/aos@3.0.0-beta.6/dist/aos.js
+particles.min.js: https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js
