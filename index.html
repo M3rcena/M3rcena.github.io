@@ -968,6 +968,19 @@
   <script src="./assets/external/aos.js" defer></script>
   <script src="./assets/external/particles.min.js" defer></script>
   <script defer>
+    // Register Service Worker
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('/sw.js')
+          .then((registration) => {
+            console.log('ServiceWorker registration successful with scope: ', registration.scope);
+          })
+          .catch((error) => {
+            console.log('ServiceWorker registration failed: ', error);
+          });
+      });
+    }
+
     // Initialize AOS
     document.addEventListener('DOMContentLoaded', function () {
       AOS.init({
