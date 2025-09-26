@@ -164,9 +164,6 @@ body {
   border-right: 2px solid var(--primary);
   white-space: nowrap;
   animation: blink-caret 0.75s step-end infinite;
-  max-width: 100%;
-  overflow: hidden;
-  word-wrap: break-word;
 }
 
 @keyframes blink-caret {
@@ -1024,8 +1021,10 @@ a:hover {
   }
 
   .typing-animation {
-    white-space: normal;
+    max-width: 100%;
+    overflow: hidden;
     word-wrap: break-word;
+    white-space: normal;
     overflow-wrap: break-word;
     hyphens: auto;
   }
