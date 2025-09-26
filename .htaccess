@@ -34,7 +34,7 @@
     </FilesMatch>
     
     # Cache external resources
-    <FilesMatch "^(aos\.js|particles\.min\.js|all\.min\.css|aos\.css)$">
+    <FilesMatch "^(aos\.js|particles\.min\.js|aos\.css|styles\.css|script\.js)$">
         Header set Cache-Control "public, max-age=31536000, immutable"
     </FilesMatch>
 </IfModule>

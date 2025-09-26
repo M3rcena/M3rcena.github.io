@@ -1,9 +1,10 @@
-const CACHE_NAME = 'm3rcena-cache-v1';
+const CACHE_NAME = 'm3rcena-cache-v2';
 const ASSETS_TO_CACHE = [
     '/',
     '/index.html',
     '/assets/profile.jpg',
-    '/assets/external/all.min.css',
+    '/assets/css/styles.css',
+    '/assets/js/script.js',
     '/assets/external/aos.css',
     '/assets/external/aos.js',
     '/assets/external/particles.min.js',
@@ -17,7 +18,6 @@ self.addEventListener('install', (event) => {
     event.waitUntil(
         caches.open(CACHE_NAME)
             .then((cache) => {
-                console.log('Opened cache');
                 return cache.addAll(ASSETS_TO_CACHE);
             })
     );
@@ -30,7 +30,6 @@ self.addEventListener('activate', (event) => {
             return Promise.all(
                 cacheNames.map((cacheName) => {
                     if (cacheName !== CACHE_NAME) {
-                        console.log('Deleting old cache:', cacheName);
                         return caches.delete(cacheName);
                     }
                 })
