@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>M3rcena's Burger & Steak House | The Future of Meat</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;500;700&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        butcherRed: '#ff1f1f',
+                        butcherDark: '#0a0a0a',
+                        butcherGray: '#1c1c1c',
+                        butcherGold: '#fbbf24'
+                    },
+                    fontFamily: {
+                        sans: ['Roboto', 'sans-serif'],
+                        header: ['Oswald', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* --- HIDE SCROLLBAR BUT KEEP SCROLLING --- */
+        /* For Chrome, Safari, and Opera */
+        *::-webkit-scrollbar {
+            display: none !important;
+            width: 0 !important;
+            height: 0 !important;
+            -webkit-appearance: none;
+            background: transparent;
+        }
+
+        /* For IE, Edge, and Firefox */
+        html, body {
+            -ms-overflow-style: none !important;  /* IE and Edge */
+            scrollbar-width: none !important;  /* Firefox */
+        }
+
+        /* Custom Futuristic Effects */
+        body {
+            background-color: #0a0a0a;
+            color: #ffffff;
+            overflow-x: hidden;
+        }
+
+        /* Glitch Animation for Titles */
+        .glitch {
+            position: relative;
+            color: white;
+        }
+        .glitch::before, .glitch::after {
+            content: attr(data-text);
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: #0a0a0a;
+        }
+        .glitch::before {
+            left: 2px;
+            text-shadow: -1px 0 #ff1f1f;
+            clip: rect(24px, 550px, 90px, 0);
+            animation: glitch-anim-2 3s infinite linear alternate-reverse;
+        }
+        .glitch::after {
+            left: -2px;
+            text-shadow: -1px 0 #00d4ff;
+            clip: rect(85px, 550px, 140px, 0);
+            animation: glitch-anim 2.5s infinite linear alternate-reverse;
+        }
+        @keyframes glitch-anim {
+            0% { clip: rect(10px, 9999px, 30px, 0); }
+            20% { clip: rect(80px, 9999px, 100px, 0); }
+            100% { clip: rect(10px, 9999px, 120px, 0); }
+        }
+        @keyframes glitch-anim-2 {
+            0% { clip: rect(40px, 9999px, 60px, 0); }
+            20% { clip: rect(10px, 9999px, 30px, 0); }
+            100% { clip: rect(90px, 9999px, 110px, 0); }
+        }
+
+        /* Neon Glow Button */
+        .btn-neon {
+            transition: all 0.3s ease;
+            box-shadow: 0 0 5px #ff1f1f, 0 0 15px #ff1f1f;
+        }
+        .btn-neon:hover {
+            box-shadow: 0 0 10px #ff1f1f, 0 0 30px #ff1f1f, 0 0 60px #ff1f1f;
+            transform: scale(1.05);
+        }
+
+        /* Card Hover Effect */
+        .menu-card:hover {
+            transform: translateY(-10px);
+            border-color: #ff1f1f;
+            box-shadow: 0 10px 30px rgba(255, 31, 31, 0.2);
+        }
+
+        /* Background Grid */
+        .cyber-grid {
+            background-image: linear-gradient(rgba(255, 31, 31, 0.05) 1px, transparent 1px),
+            linear-gradient(90deg, rgba(255, 31, 31, 0.05) 1px, transparent 1px);
+            background-size: 50px 50px;
+        }
+    </style>
+</head>
+<body class="font-sans antialiased selection:bg-butcherRed selection:text-white">
+
+    <nav id="navbar" class="fixed w-full z-50 transition-all duration-300 bg-butcherDark/90 backdrop-blur-md border-b border-white/10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <div class="flex-shrink-0">
+                    <a href="#" class="font-header text-3xl font-bold tracking-tighter text-white">
+                        M3RCENA'S <span class="text-butcherRed">BURGER</span>
+                    </a>
+                </div>
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-8">
+                        <a href="#home" class="hover:text-butcherRed px-3 py-2 transition-colors font-medium">HOME</a>
+                        <a href="#menu" class="hover:text-butcherRed px-3 py-2 transition-colors font-medium">MENU</a>
+                        <a href="#xxl" class="hover:text-butcherRed px-3 py-2 transition-colors font-medium">XXL CHALLENGE</a>
+                        <a href="#locations" class="hover:text-butcherRed px-3 py-2 transition-colors font-medium">LOCATIONS</a>
+                    </div>
+                </div>
+                <div class="hidden md:block">
+                    <a href="#" target="_blank" class="btn-neon bg-butcherRed text-white px-6 py-2 font-header uppercase tracking-wider font-bold clip-path-slant">
+                        ORDER ONLINE
+                    </a>
+                </div>
+                <div class="-mr-2 flex md:hidden">
+                    <button type="button" onclick="document.getElementById('mobile-menu').classList.toggle('hidden')" class="text-white hover:text-butcherRed p-2">
+                        <i class="fas fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="hidden md:hidden bg-butcherGray" id="mobile-menu">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="#home" class="text-white block px-3 py-2 text-base font-medium">HOME</a>
+                <a href="#menu" class="text-white block px-3 py-2 text-base font-medium">MENU</a>
+                <a href="#locations" class="text-white block px-3 py-2 text-base font-medium">LOCATIONS</a>
+            </div>
+        </div>
+    </nav>
+
+    <section id="home" class="relative h-screen flex items-center justify-center overflow-hidden">
+        <div class="absolute inset-0 z-0">
+            <img src="https://images.unsplash.com/photo-1550547660-d9450f859349?q=80&w=2565&auto=format&fit=crop" 
+                 class="w-full h-full object-cover opacity-60" alt="Butcher's Burger Hero">
+            <div class="absolute inset-0 bg-gradient-to-t from-butcherDark via-butcherDark/50 to-transparent"></div>
+        </div>
+
+        <div class="relative z-10 text-center px-4 max-w-5xl mx-auto mt-16">
+            <p class="text-butcherRed font-header tracking-[0.3em] uppercase mb-4 text-xl">Since 1979 • Family Farm Raised</p>
+            <h1 class="font-header text-6xl md:text-8xl font-bold uppercase tracking-tighter mb-6 leading-none glitch" data-text="MEAT YOUR DESTINY">
+                MEAT YOUR <span class="text-transparent bg-clip-text bg-gradient-to-r from-butcherRed to-red-800">DESTINY</span>
+            </h1>
+            <p class="text-gray-300 text-lg md:text-xl max-w-2xl mx-auto mb-10 font-light">
+                Experience the evolution of the burger. 100% fresh ground beef from our private family farm in Attica. 
+                Dry-aged perfection. Futuristic flavor.
+            </p>
+            <div class="flex flex-col md:flex-row gap-4 justify-center">
+                <a href="#menu" class="btn-neon bg-butcherRed text-white px-8 py-4 font-header text-xl uppercase font-bold">
+                    View The Arsenal
+                </a>
+                <a href="#xxl" class="border border-white/30 hover:bg-white/10 text-white px-8 py-4 font-header text-xl uppercase font-bold transition-all">
+                    XXL Challenges
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <div class="bg-butcherRed py-3 overflow-hidden whitespace-nowrap border-y border-white/20">
+        <div class="inline-block animate-marquee pl-full">
+            <span class="text-black font-header font-bold text-2xl mx-8">/// 100% GREEK MEAT</span>
+            <span class="text-black font-header font-bold text-2xl mx-8">/// DRY AGED 60 DAYS</span>
+            <span class="text-black font-header font-bold text-2xl mx-8">/// 2KG BURGER CHALLENGE</span>
+            <span class="text-black font-header font-bold text-2xl mx-8">/// ATHENS • MYKONOS • PERISTERI</span>
+            <span class="text-black font-header font-bold text-2xl mx-8">/// EST. 1998</span>
+        </div>
+    </div>
+
+    <section id="menu" class="py-24 bg-butcherDark cyber-grid relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="font-header text-5xl font-bold text-white mb-4">THE <span class="text-butcherRed">COLLECTION</span></h2>
+                <div class="h-1 w-24 bg-butcherRed mx-auto"></div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                
+                <div class="menu-card group bg-butcherGray border border-white/10 p-6 rounded-none relative overflow-hidden transition-all duration-300">
+                    <div class="absolute top-0 right-0 bg-butcherRed text-xs font-bold px-3 py-1 font-header text-black">BEST SELLER</div>
+                    <div class="h-48 bg-black/50 mb-6 overflow-hidden relative">
+                         <img src="https://images.unsplash.com/photo-1594212699903-ec8a3eca50f5?q=80&w=2671&auto=format&fit=crop" 
+                              class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" alt="Jack Daniels Burger">
+                    </div>
+                    <h3 class="font-header text-2xl font-bold mb-2">JACK DANIEL'S BURGER</h3>
+                    <p class="text-gray-400 text-sm mb-4 h-12">100% fresh ground beef, cheddar, tomato, onion rings, bacon & our signature Jack Daniel's sauce.</p>
+                    <div class="flex justify-between items-center border-t border-white/10 pt-4">
+                        <span class="text-butcherRed font-header text-xl font-bold">€9.50</span>
+                        <span class="text-white/50 text-xs uppercase tracking-widest">Code: JD-01</span>
+                    </div>
+                </div>
+
+                <div class="menu-card group bg-butcherGray border border-white/10 p-6 rounded-none relative overflow-hidden transition-all duration-300">
+                    <div class="h-48 bg-black/50 mb-6 overflow-hidden relative">
+                        <img src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?q=80&w=2499&auto=format&fit=crop" 
+                             class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" alt="Buffalo Bill">
+                    </div>
+                    <h3 class="font-header text-2xl font-bold mb-2">BUFFALO BILL</h3>
+                    <p class="text-gray-400 text-sm mb-4 h-12">Buffalo meat patty, caramelized onions, cheddar cheese, bio-pickles, and spicy mayo.</p>
+                    <div class="flex justify-between items-center border-t border-white/10 pt-4">
+                        <span class="text-butcherRed font-header text-xl font-bold">€11.00</span>
+                        <span class="text-white/50 text-xs uppercase tracking-widest">Code: BB-02</span>
+                    </div>
+                </div>
+
+                <div class="menu-card group bg-butcherGray border border-white/10 p-6 rounded-none relative overflow-hidden transition-all duration-300">
+                     <div class="h-48 bg-black/50 mb-6 overflow-hidden relative">
+                        <img src="https://images.unsplash.com/photo-1600891964092-4316c288032e?q=80&w=2670&auto=format&fit=crop" 
+                             class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" alt="T-Bone Steak">
+                    </div>
+                    <h3 class="font-header text-2xl font-bold mb-2">DRY AGED RIBEYE</h3>
+                    <p class="text-gray-400 text-sm mb-4 h-12">60-day dry aged in our in-house lockers. Served with rock salt and truffle oil.</p>
+                    <div class="flex justify-between items-center border-t border-white/10 pt-4">
+                        <span class="text-butcherRed font-header text-xl font-bold">€24.00</span>
+                        <span class="text-white/50 text-xs uppercase tracking-widest">Code: STK-03</span>
+                    </div>
+                </div>
+
+            </div>
+            
+            <div class="mt-12 text-center">
+                <a href="#" class="inline-block border-b-2 border-butcherRed pb-1 text-white hover:text-butcherRed transition-colors font-header text-lg uppercase tracking-widest">View Full Menu</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="xxl" class="py-24 relative bg-zinc-900 border-y border-white/10">
+        <div class="container mx-auto px-6 flex flex-col md:flex-row items-center gap-12">
+            
+            <div class="w-full md:w-1/2 relative">
+                <div class="absolute -inset-4 bg-butcherRed/20 blur-xl rounded-full"></div>
+                <img src="https://images.unsplash.com/photo-1596662951482-0c4ba74a6df6?q=80&w=2574&auto=format&fit=crop" 
+                     alt="La Butcher Familia" 
+                     class="relative z-10 w-full rounded-lg shadow-2xl border border-white/20 transform md:rotate-3 hover:rotate-0 transition-transform duration-500">
+            </div>
+
+            <div class="w-full md:w-1/2 text-left">
+                <div class="flex items-center gap-2 mb-4">
+                    <i class="fas fa-exclamation-triangle text-butcherGold"></i>
+                    <span class="text-butcherGold font-bold tracking-widest uppercase">Warning: Extreme Content</span>
+                </div>
+                <h2 class="font-header text-5xl md:text-7xl font-bold leading-none mb-6">
+                    LA BUTCHER <br><span class="text-outline text-transparent bg-clip-text bg-gradient-to-r from-butcherRed to-white">FAMILIA</span>
+                </h2>
+                <p class="text-gray-300 text-lg mb-8 leading-relaxed">
+                    The biggest burger in Greece. Are you brave enough?
+                    <br><br>
+                    <span class="text-white font-bold block mb-2">SPECS:</span>
+                    <ul class="grid grid-cols-2 gap-2 text-gray-400 font-mono text-sm">
+                        <li>> 2KG 100% Beef Patty</li>
+                        <li>> 10 Slices of Bacon</li>
+                        <li>> 10 Slices of Cheddar</li>
+                        <li>> 4 Fried Eggs</li>
+                        <li>> Custom XXXL Bun</li>
+                    </ul>
+                </p>
+                <br />
+                <button class="bg-white text-black px-8 py-3 font-header font-bold uppercase hover:bg-butcherRed hover:text-white transition-colors">
+                    Accept Challenge
+                </button>
+            </div>
+
+        </div>
+    </section>
+
+    <section id="locations" class="py-24 bg-black text-white">
+        <div class="max-w-7xl mx-auto px-4">
+            <h2 class="font-header text-4xl font-bold mb-12 text-center">BASE OF <span class="text-butcherRed">OPERATIONS</span></h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="border-l-2 border-butcherRed pl-6 py-2 hover:bg-white/5 transition-colors">
+                    <h3 class="font-header text-xl font-bold">HALANDRI (HQ)</h3>
+                    <p class="text-gray-400 text-sm mt-1">Address 123</p>
+                    <p class="text-butcherRed text-sm mt-2 font-mono">+30 210 000000</p>
+                </div>
+
+                <div class="border-l-2 border-butcherRed pl-6 py-2 hover:bg-white/5 transition-colors">
+                    <h3 class="font-header text-xl font-bold">SYNTAGMA</h3>
+                    <p class="text-gray-400 text-sm mt-1">Address 123, Athens Center</p>
+                    <p class="text-butcherRed text-sm mt-2 font-mono">+30 210 000000</p>
+                </div>
+
+                <div class="border-l-2 border-butcherRed pl-6 py-2 hover:bg-white/5 transition-colors">
+                    <h3 class="font-header text-xl font-bold">PERISTERI</h3>
+                    <p class="text-gray-400 text-sm mt-1">Address 123</p>
+                    <p class="text-butcherRed text-sm mt-2 font-mono">+30 210 000000</p>
+                </div>
+                
+                 <div class="border-l-2 border-butcherRed pl-6 py-2 hover:bg-white/5 transition-colors">
+                    <h3 class="font-header text-xl font-bold">MYKONOS</h3>
+                    <p class="text-gray-400 text-sm mt-1">Address 123</p>
+                    <p class="text-butcherRed text-sm mt-2 font-mono">+30 22890 000000</p>
+                </div>
+            </div>
+            
+            <div class="mt-12 text-center">
+                 <p class="text-gray-500 text-sm">Also serving: Ilioupoli, Kifisia, Glyfada.</p>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-butcherDark border-t border-white/10 pt-16 pb-8">
+        <div class="max-w-7xl mx-auto px-4 text-center">
+            <h2 class="font-header text-3xl font-bold tracking-tighter text-white mb-6">
+              M3RCENA'S <span class="text-butcherRed">BURGER</span>
+            </h2>
+            <div class="flex justify-center space-x-6 mb-8">
+                <a href="#" class="text-gray-400 hover:text-white transition-colors"><i class="fab fa-instagram text-2xl"></i></a>
+                <a href="#" class="text-gray-400 hover:text-white transition-colors"><i class="fab fa-facebook text-2xl"></i></a>
+                <a href="#" class="text-gray-400 hover:text-white transition-colors"><i class="fab fa-tiktok text-2xl"></i></a>
+            </div>
+            <p class="text-gray-600 text-sm font-mono">
+                © 2025 M3rcena.<br>
+                Designed for the Future.
+            </p>
+        </div>
+    </footer>
+
+    <div class="group fixed bottom-8 right-0 z-50 flex items-center justify-end ease-cyber transition-all duration-500">
+      <div class="bg-butcherDark/95 backdrop-blur-md border-l-2 border-y-2 border-butcherRed text-white p-3 rounded-l-full group-hover:rounded-l-xl shadow-neon hover:shadow-neon-strong flex items-center space-x-0 group-hover:space-x-5 overflow-hidden max-w-[60px] group-hover:max-w-[450px] ease-cyber transition-all duration-500">
+
+          <div class="flex-shrink-0 pl-1">
+             <i class="fas fa-info-circle text-2xl text-butcherRed animate-pulse group-hover:animate-none"></i>
+          </div>
+
+          <div class="opacity-0 group-hover:opacity-100 transition-opacity duration-300 delay-75 flex flex-col gap-3 min-w-[280px]">
+              <div>
+                  <p class="font-header text-butcherRed text-lg font-bold uppercase tracking-wider">
+                      /// SYSTEM PREVIEW MODE
+                  </p>
+                  <p class="text-sm font-mono text-gray-300 leading-tight mt-1">
+                      All photos, prices, and texts shown are placeholders for design demonstration only and do not represent real data.
+                  </p>
+              </div>
+              <a href="/" class="btn-neon bg-butcherRed text-white text-sm uppercase font-bold tracking-widest px-4 py-3 text-center clip-path-slant hover:bg-white hover:text-black transition-all">
+                  <i class="fas fa-undo mr-2"></i> EXIT PREVIEW
+              </a>
+          </div>
+      </div>
+  </div>
+
+    <script>
+        window.addEventListener('scroll', function() {
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('shadow-lg');
+                navbar.classList.add('bg-black');
+            } else {
+                navbar.classList.remove('shadow-lg');
+                navbar.classList.remove('bg-butcherDark/90');
+            }
+        });
+    </script>
+
+    <script>
+      // Disable Right Click
+      document.addEventListener('contextmenu', event => event.preventDefault());    
+
+      // Disable Key Shortcuts (F12, Ctrl+Shift+I, Ctrl+U)
+      document.onkeydown = function(e) {
+          if(event.keyCode == 123) {
+              return false;
+          }
+          if(e.ctrlKey && e.shiftKey && e.keyCode == 'I'.charCodeAt(0)) {
+              return false;
+          }
+          if(e.ctrlKey && e.shiftKey && e.keyCode == 'C'.charCodeAt(0)) {
+              return false;
+          }
+          if(e.ctrlKey && e.shiftKey && e.keyCode == 'J'.charCodeAt(0)) {
+              return false;
+          }
+          if(e.ctrlKey && e.keyCode == 'U'.charCodeAt(0)) {
+              return false;
+          }
+      }
+    </script>
+</body>
+</html>
