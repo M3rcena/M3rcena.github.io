@@ -351,63 +351,6 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 
-  // Typing animation for hero text
-  const typingText = document.querySelector(".typing-text");
-  if (typingText) {
-    const text = typingText.textContent;
-    typingText.textContent = "";
-    let i = 0;
-    const typeWriter = () => {
-      if (i < text.length) {
-        typingText.textContent += text.charAt(i);
-        i++;
-        setTimeout(typeWriter, 100);
-      }
-    };
-    setTimeout(typeWriter, 1000);
-  }
-
-  // Dynamic typing animation for main title
-  const phrases = ["I build cross-platform desktop tools.", "I design low-latency full-stack architectures.", "I engineer systems from FPGA logic to modern web.", "I craft fast, type-safe developer tooling."];
-
-  const typingElement = document.getElementById("typing-text");
-  let currentPhraseIndex = 0;
-  let currentCharIndex = 0;
-  let isDeleting = false;
-  let typingSpeed = 100;
-
-  const typeText = () => {
-    const currentPhrase = phrases[currentPhraseIndex];
-
-    if (isDeleting) {
-      // Deleting characters
-      typingElement.textContent = currentPhrase.substring(0, currentCharIndex - 1);
-      currentCharIndex--;
-      typingSpeed = 50; // Faster when deleting
-    } else {
-      // Adding characters
-      typingElement.textContent = currentPhrase.substring(0, currentCharIndex + 1);
-      currentCharIndex++;
-      typingSpeed = 100; // Normal speed when typing
-    }
-
-    if (!isDeleting && currentCharIndex === currentPhrase.length) {
-      // Finished typing, wait before deleting
-      typingSpeed = 2000;
-      isDeleting = true;
-    } else if (isDeleting && currentCharIndex === 0) {
-      // Finished deleting, move to next phrase
-      isDeleting = false;
-      currentPhraseIndex = (currentPhraseIndex + 1) % phrases.length;
-      typingSpeed = 500; // Pause before starting next phrase
-    }
-
-    setTimeout(typeText, typingSpeed);
-  };
-
-  // Start the typing animation after a delay
-  setTimeout(typeText, 2000);
-
   // Smooth reveal animations
   const revealElements = document.querySelectorAll(".project-card, .skill-card, .github-project-card");
   const revealObserver = new IntersectionObserver(

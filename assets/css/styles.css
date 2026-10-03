@@ -83,6 +83,14 @@ body {
   pointer-events: none;
 }
 
+.hero-role-title {
+  display: block;
+  font-size: 2.2rem;
+  color: var(--primary);
+  font-weight: 600;
+  margin-top: 0.5rem;
+}
+
 .floating-elements {
   position: relative;
   width: 100%;
@@ -131,10 +139,6 @@ body {
   animation-delay: 4.5s;
 }
 
-.typing-text {
-  display: inline-block;
-}
-
 .cursor {
   animation: blink 1s infinite;
   color: var(--primary);
@@ -168,13 +172,6 @@ body {
   50% {
     background-position: 100% 50%;
   }
-}
-
-.typing-animation {
-  display: inline-block;
-  border-right: 2px solid var(--primary);
-  white-space: nowrap;
-  animation: blink-caret 0.75s step-end infinite;
 }
 
 @keyframes blink-caret {
@@ -480,6 +477,13 @@ body {
   font-size: 2.5rem;
   color: var(--primary);
   margin-bottom: 1rem;
+}
+
+.about-lead {
+  color: var(--text-primary);
+  font-size: 1.8rem;
+  margin-bottom: 1.5rem;
+  font-weight: 600;
 }
 
 .about-container {
@@ -791,15 +795,6 @@ a:hover {
     font-size: 3rem;
   }
 
-  .typing-animation {
-    max-width: 100%;
-    overflow: hidden;
-    word-wrap: break-word;
-    white-space: normal;
-    overflow-wrap: break-word;
-    hyphens: auto;
-  }
-
   .nav-links {
     display: none;
   }
@@ -861,6 +856,21 @@ a:hover {
   border-color: var(--primary);
   color: var(--primary);
   transform: scale(1.1);
+}
+
+.competency-title {
+  margin: 0;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #f8fafc;
+}
+
+.contact-method-label {
+  display: block;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 0.5rem;
 }
 
 :root.light-theme {

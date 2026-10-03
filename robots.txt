@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+# Sitemap reference
+Sitemap: https://m3rcena.github.io/sitemap.xml

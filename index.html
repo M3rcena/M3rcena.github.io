@@ -43,8 +43,9 @@
     <link rel="stylesheet" href="./assets/external/aos.css" media="print" onload="this.media = 'all'" />
     <link rel="stylesheet" href="./assets/css/styles.css" />
 
-    <!-- Favicon -->
+    <!-- Favicon & Mobile Touch Icons -->
     <link rel="icon" type="image/png" href="assets/profile.jpg" />
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/profile.jpg" />
 
     <!-- Google Search Console -->
     <meta name="google-site-verification" content="MOlgyRbz7Op_6r8GSaL_b-5yyLGaKb4bGwmIF-k6-Sg" />
@@ -74,7 +75,7 @@
         <a href="#github-projects" class="cursor-pointer">Open Source</a>
         <a href="#experience" class="cursor-pointer">Education</a>
         <a href="#contact" class="cursor-pointer">Contact</a>
-        <a href="./assets/Michail_Farmakis_CV.pdf" target="_blank" class="cursor-pointer" download style="color: var(--primary); font-weight: 600"> <i class="fas fa-file-arrow-down" style="margin-right: 4px"></i>CV </a>
+        <a href="./assets/Michail_Farmakis.pdf" target="_blank" class="cursor-pointer" download style="color: var(--primary); font-weight: 600"> <i class="fas fa-file-arrow-down" style="margin-right: 4px"></i>CV </a>
       </div>
       <div class="nav-controls">
         <button class="theme-toggle cursor-pointer" id="theme-toggle" title="Toggle Theme">
@@ -96,8 +97,8 @@
           <span class="cursor">|</span>
         </p>
         <h1 class="hero-title">
-          <span class="gradient-text">Michail Farmakis.</span><br />
-          <span class="typing-animation" id="typing-text">I build robust, end-to-end software.</span>
+          <span class="gradient-text">Michail Farmakis</span><br />
+          <span class="hero-role-title">Full-Stack Software Engineer</span>
         </h1>
         <p class="hero-description">I'm a <span class="highlight">Full-Stack Software Engineer</span> and <span class="highlight">Computer Science Student</span> at NKUA. I engineer high-performance web applications, cross-platform desktop software, and data-dense dashboards—bridging low-level systems logic with clean, modern interfaces.</p>
         <div class="hero-buttons">
@@ -105,7 +106,7 @@
             <span>View Featured Work</span>
             <i class="fas fa-arrow-right"></i>
           </a>
-          <a href="./assets/Michail Farmakis.pdf" target="_blank" class="cta-button secondary cursor-pointer" download>
+          <a href="./assets/Michail_Farmakis.pdf" target="_blank" class="cta-button secondary cursor-pointer" download>
             <span>Resume / CV</span>
             <i class="fas fa-file-arrow-down"></i>
           </a>
@@ -146,7 +147,7 @@
           </div>
         </div>
         <div class="about-content" data-aos="fade-left">
-          <h3>Builder with a first-principles mindset.</h3>
+          <h2 class="about-lead">Builder with a first-principles mindset.</h2>
           <p>I focus on end-to-end software delivery: from architecting resilient backends and managing database state to designing responsive, information-dense user interfaces.</p>
           <p>My academic foundation at the Department of Informatics & Telecommunications (NKUA) spans low-level systems programming in C/C++, assembly, and digital logic design on FPGAs. This dual exposure to low-level hardware constraints and modern web stacks allows me to write performant, predictable software across any layer.</p>
           <div class="about-details">
@@ -188,7 +189,7 @@
             </div>
           </div>
           <div class="project-content">
-            <h3 class="project-title">Udeler-Reborn</h3>
+            <h4 class="project-title">Udeler-Reborn</h3>
             <p class="project-description">Cross-platform desktop application revitalizing offline course and asset management. Built with Electron, TypeScript, and React, featuring resilient IPC communication, multi-threaded download stream queues, local caching, and automated multi-OS release builds using GitHub Actions.</p>
             <div class="tech-stack">
               <span class="tech-tag">TypeScript</span>
@@ -215,7 +216,7 @@
             </div>
           </div>
           <div class="project-content">
-            <h3 class="project-title">Fast Food Landing Page</h3>
+            <h4 class="project-title">Fast Food Landing Page</h3>
             <p class="project-description">Redefining the fast-food aesthetic, I designed a Cyber-Industrial landing page for M3rcena's Burger that merges raw culinary grit with a futuristic interface. Built using Tailwind CSS, the site features a high-contrast dark mode, custom glitch animations, and a seamless, scrollbar-free user experience.</p>
             <div class="tech-stack">
               <span class="tech-tag">HTML</span>
@@ -249,7 +250,7 @@
           </div>
           <div class="project-content">
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 6px">
-              <h3 class="project-title" style="margin-bottom: 0">ChronoGit</h3>
+              <h4 class="project-title" style="margin-bottom: 0">ChronoGit</h3>
               <span style="font-size: 0.75rem; color: #64748b; font-weight: 500; font-family: monospace">v0.1.0-alpha</span>
             </div>
             <p class="project-description">Automated documentation engine built on the GitHub Apps framework. Synchronizes dynamic directory architecture trees directly into README files on push events via verified app commits. Includes constant-time HMAC webhook security, WebAuthn passkey authentication, and a real-time configuration workbench.</p>
@@ -280,7 +281,7 @@
             </div>
             <div>
               <span class="layer-tag">Layer 01</span>
-              <h3>Frontend Engineering</h3>
+              <h4 class="competency-title">Frontend Engineering</h4>
             </div>
           </div>
           <div class="focus-strip">
@@ -306,7 +307,7 @@
             </div>
             <div>
               <span class="layer-tag">Layer 02</span>
-              <h3>Backend & APIs</h3>
+              <h4 class="competency-title">Backend & APIs</h4>
             </div>
           </div>
           <div class="focus-strip">
@@ -332,7 +333,7 @@
             </div>
             <div>
               <span class="layer-tag">Layer 03</span>
-              <h3>Desktop & Native Tools</h3>
+              <h4 class="competency-title">Desktop & Native Tools</h4>
             </div>
           </div>
           <div class="focus-strip">
@@ -357,7 +358,7 @@
             </div>
             <div>
               <span class="layer-tag">Layer 04</span>
-              <h3>Systems & Low-Level</h3>
+              <h4 class="competency-title">Systems & Low-Level</h4>
             </div>
           </div>
           <div class="focus-strip">
@@ -382,7 +383,7 @@
             </div>
             <div>
               <span class="layer-tag">Layer 05</span>
-              <h3>Data & Persistence</h3>
+              <h4 class="competency-title">Data & Persistence</h4>
             </div>
           </div>
           <div class="focus-strip">
@@ -407,7 +408,7 @@
             </div>
             <div>
               <span class="layer-tag">Layer 06</span>
-              <h3>DevOps & Runtimes</h3>
+              <h4 class="competency-title">DevOps & Runtimes</h4>
             </div>
           </div>
           <div class="focus-strip">
@@ -440,7 +441,7 @@
               </div>
               <div>
                 <span class="oss-scope">NPM Package Registry</span>
-                <h3 class="oss-title">@m3rcena/weky</h3>
+                <h4 class="oss-title">@m3rcena/weky</h4>
               </div>
             </div>
             <span class="oss-badge release repo-stars"><i class="fas fa-star"></i> 2</span>
@@ -489,7 +490,7 @@
               </div>
               <div>
                 <span class="oss-scope">Desktop Client</span>
-                <h3 class="oss-title">Udeler-Reborn</h3>
+                <h4 class="oss-title">Udeler-Reborn</h4>
               </div>
             </div>
             <span class="oss-badge platform repo-stars"><i class="fas fa-star"></i> 62</span>
@@ -535,7 +536,7 @@
             </div>
             <div>
               <span class="edu-meta-tag">Undergraduate Studies</span>
-              <h3 class="edu-title">B.Sc. in Informatics & Telecommunications</h3>
+              <h4 class="edu-title">B.Sc. in Informatics & Telecommunications</h4>
               <span class="edu-institution">National & Kapodistrian University of Athens (NKUA / ΕΚΠΑ)</span>
             </div>
           </div>
@@ -567,7 +568,7 @@
             </div>
             <div>
               <span class="edu-meta-tag">Professional Specialization</span>
-              <h3 class="edu-title">Google IT Support Professional</h3>
+              <h4 class="edu-title">Google IT Support Professional</h4>
               <span class="edu-institution">Google / Coursera</span>
             </div>
           </div>
@@ -598,7 +599,7 @@
             </div>
             <div>
               <span class="edu-meta-tag">Coursework & Foundations</span>
-              <h3 class="edu-title">Quantum Computing & AI Foundations</h3>
+              <h4 class="edu-title">Quantum Computing & AI Foundations</h4>
               <span class="edu-institution">The Coding School / Qubit by Qubit</span>
             </div>
           </div>
@@ -629,17 +630,17 @@
       <div class="contact-grid">
         <div class="contact-card" data-aos="fade-up">
           <i class="fas fa-envelope contact-icon"></i>
-          <h3>Email</h3>
+          <span class="contact-method-label">Email</span>
           <a href="mailto:michail.frm@gmail.com" class="cursor-pointer">michail.frm@gmail.com</a>
         </div>
         <div class="contact-card" data-aos="fade-up" data-aos-delay="100">
           <i class="fab fa-linkedin contact-icon"></i>
-          <h3>LinkedIn</h3>
+          <span class="contact-method-label">LinkedIn</span>
           <a href="https://www.linkedin.com/in/michail-farmakis/" target="_blank" class="cursor-pointer">Connect on LinkedIn</a>
         </div>
         <div class="contact-card" data-aos="fade-up" data-aos-delay="200">
           <i class="fab fa-github contact-icon"></i>
-          <h3>GitHub</h3>
+          <span class="contact-method-label">GitHub</span>
           <a href="https://github.com/M3rcena" target="_blank" class="cursor-pointer">Explore My Code</a>
         </div>
       </div>
