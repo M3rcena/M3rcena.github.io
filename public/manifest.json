@@ -1,0 +1,23 @@
+{
+  "name": "Michail Farmakis | Software Engineer",
+  "short_name": "m3rcena",
+  "description": "Portfolio of Michail Farmakis (m3rcena) - Full-Stack Software Engineer & CS Student @ NKUA",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#020617",
+  "theme_color": "#020617",
+  "icons": [
+    {
+      "src": "/assets/profile.jpg",
+      "sizes": "192x192",
+      "type": "image/jpeg",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/assets/profile.jpg",
+      "sizes": "512x512",
+      "type": "image/jpeg",
+      "purpose": "any maskable"
+    }
+  ]
+}

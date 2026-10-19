@@ -1,5 +1,19 @@
 User-agent: *
 Allow: /
 
-# Sitemap reference
+# Major Search Engine Crawlers
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: Applebot
+Allow: /
+
+User-agent: DuckDuckBot
+Allow: /
+
+# Canonical Sitemap Reference
 Sitemap: https://m3rcena.github.io/sitemap.xml
+Host: https://m3rcena.github.io

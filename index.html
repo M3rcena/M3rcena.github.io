@@ -1,700 +1,103 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Michail Farmakis | Full-Stack Software Engineer</title>
-    <meta name="trustpilot-one-time-domain-verification-id" content="8162e3cf-ea12-4acd-9a08-8041a28f798a" />
+    <title>Michail Farmakis | Full-Stack Software Engineer &amp; CS Student @ NKUA</title>
 
-    <!-- Meta Info -->
-    <meta name="description" content="Software Engineer specializing in full-stack web architectures, cross-platform desktop applications, and systems programming." />
-    <meta name="keywords" content="M3rcena, Michail Farmakis, Software Engineer, Full-Stack Developer, TypeScript, React, Electron, Node.js" />
-    <link rel="author" href="https://github.com/m3rcena" />
-    <link rel="canonical" href="https://m3rcena.github.io" />
+    <!-- Primary SEO Metadata -->
+    <meta name="title" content="Michail Farmakis | Full-Stack Software Engineer &amp; CS Student @ NKUA" />
+    <meta name="description" content="Portfolio of Michail Farmakis (m3rcena) - Full-Stack Software Engineer &amp; Computer Science Student at NKUA Department of Informatics &amp; Telecommunications. Bridging low-level systems (C/C++, Assembly, FPGAs) with resilient modern web architectures, distributed backends, and high-performance desktop clients." />
+    <meta name="keywords" content="Michail Farmakis, Μιχαήλ Φαρμάκης, m3rcena, Software Engineer, Full-Stack Developer, Systems Programming, C, C++, Assembly, POSIX, FPGA, VHDL, Vivado, React 18, TypeScript, Electron, Node.js, NKUA, National and Kapodistrian University of Athens, Athens Greece, Open Source" />
+    <meta name="author" content="Michail Farmakis" />
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+    <link rel="canonical" href="https://m3rcena.github.io/" />
 
-    <!-- Open Graph -->
-    <meta property="og:url" content="https://m3rcena.github.io" />
-    <meta property="og:image" content="https://m3rcena.github.io/assets/profile.jpg" />
-    <meta property="og:description" content="Software Engineer specializing in full-stack web architectures, cross-platform desktop applications, and systems programming." />
-    <meta property="og:title" content="Michail Farmakis | Software Engineer" />
-    <meta property="og:site_name" content="Michail Farmakis" />
-    <meta property="og:see_also" content="https://m3rcena.github.io" />
+    <!-- Hreflang Multi-Language Support -->
+    <link rel="alternate" hreflang="en" href="https://m3rcena.github.io/" />
+    <link rel="alternate" hreflang="el" href="https://m3rcena.github.io/" />
+    <link rel="alternate" hreflang="x-default" href="https://m3rcena.github.io/" />
+
+    <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Michail Farmakis Portfolio" />
+    <meta property="og:url" content="https://m3rcena.github.io/" />
+    <meta property="og:title" content="Michail Farmakis | Full-Stack Software Engineer &amp; CS Student @ NKUA" />
+    <meta property="og:description" content="Bridging low-level systems programming (C/C++, Assembly, FPGAs) with resilient modern web architectures, distributed backends, and high-performance desktop clients." />
+    <meta property="og:image" content="https://m3rcena.github.io/assets/profile.jpg" />
+    <meta property="og:image:alt" content="Michail Farmakis - Software Engineer" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:locale:alternate" content="el_GR" />
 
     <!-- Twitter Card -->
-    <meta name="twitter:card" content="summary" />
-    <meta name="twitter:url" content="https://m3rcena.github.io" />
-    <meta name="twitter:title" content="Michail Farmakis | Software Engineer" />
-    <meta name="twitter:description" content="Software Engineer specializing in full-stack web architectures, cross-platform desktop applications, and systems programming." />
-    <meta name="twitter:image" content="assets/profile.jpg" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@m3rcena" />
+    <meta name="twitter:creator" content="@m3rcena" />
+    <meta name="twitter:url" content="https://m3rcena.github.io/" />
+    <meta name="twitter:title" content="Michail Farmakis | Full-Stack Software Engineer &amp; CS Student @ NKUA" />
+    <meta name="twitter:description" content="Explore production software, systems architecture, and open-source tooling by Michail Farmakis." />
+    <meta name="twitter:image" content="https://m3rcena.github.io/assets/profile.jpg" />
 
-    <!-- Preload critical resources -->
-    <link rel="preload" href="./assets/external/css2.css" as="style" />
-    <link rel="preload" href="assets/profile.jpg" as="image" />
-    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" as="style" />
+    <!-- Mobile & PWA Theme Metadata -->
+    <meta name="theme-color" content="#020617" />
+    <meta name="color-scheme" content="dark" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="apple-mobile-web-app-title" content="m3rcena" />
+    <meta name="format-detection" content="telephone=no" />
+    <link rel="icon" type="image/jpeg" href="/assets/profile.jpg" />
+    <link rel="apple-touch-icon" href="/assets/profile.jpg" />
+    <link rel="manifest" href="/manifest.json" />
 
-    <!-- Fonts -->
+    <!-- Preconnect & Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="./assets/external/css2.css" rel="stylesheet" media="print" onload="this.media = 'all'" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700;800&display=swap" rel="stylesheet" />
 
-    <!-- Styles -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
-    <link rel="stylesheet" href="./assets/external/aos.css" media="print" onload="this.media = 'all'" />
-    <link rel="stylesheet" href="./assets/css/styles.css" />
-
-    <!-- Favicon & Mobile Touch Icons -->
-    <link rel="icon" type="image/png" href="assets/profile.jpg" />
-    <link rel="apple-touch-icon" sizes="180x180" href="assets/profile.jpg" />
-
-    <!-- Google Search Console -->
-    <meta name="google-site-verification" content="MOlgyRbz7Op_6r8GSaL_b-5yyLGaKb4bGwmIF-k6-Sg" />
-
-    <!-- Fallback for async CSS -->
-    <noscript>
-      <link rel="stylesheet" href="./assets/external/css2.css" />
-      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
-      <link rel="stylesheet" href="./assets/external/aos.css" />
-      <link rel="stylesheet" href="./assets/css/styles.css" />
-    </noscript>
-  </head>
-
-  <body>
-    <!-- Loading Screen -->
-    <div class="loading-screen" id="loading-screen">
-      <div class="loading-spinner"></div>
-      <div class="loading-text">Loading Portfolio...</div>
-    </div>
-
-    <nav class="navbar">
-      <a href="#" class="logo cursor-pointer">MF.</a>
-      <div class="nav-links">
-        <a href="#about" class="cursor-pointer">About</a>
-        <a href="#projects" class="cursor-pointer">Projects</a>
-        <a href="#skills" class="cursor-pointer">Skills</a>
-        <a href="#github-projects" class="cursor-pointer">Open Source</a>
-        <a href="#experience" class="cursor-pointer">Education</a>
-        <a href="#contact" class="cursor-pointer">Contact</a>
-        <a href="./assets/Michail_Farmakis.pdf" target="_blank" class="cursor-pointer" download style="color: var(--primary); font-weight: 600"> <i class="fas fa-file-arrow-down" style="margin-right: 4px"></i>CV </a>
-      </div>
-      <div class="nav-controls">
-        <button class="theme-toggle cursor-pointer" id="theme-toggle" title="Toggle Theme">
-          <i class="fas fa-moon"></i>
-        </button>
-        <button class="mobile-menu-toggle cursor-pointer" id="mobile-menu-toggle">
-          <span></span>
-          <span></span>
-          <span></span>
-        </button>
-      </div>
-    </nav>
-
-    <!-- Hero Section -->
-    <section class="hero">
-      <div class="hero-content" data-aos="fade-up">
-        <p class="hero-subtitle">
-          <span class="typing-text">Hi, my name is</span>
-          <span class="cursor">|</span>
-        </p>
-        <h1 class="hero-title">
-          <span class="gradient-text">Michail Farmakis</span><br />
-          <span class="hero-role-title">Full-Stack Software Engineer</span>
-        </h1>
-        <p class="hero-description">I'm a <span class="highlight">Full-Stack Software Engineer</span> and <span class="highlight">Computer Science Student</span> at NKUA. I engineer high-performance web applications, cross-platform desktop software, and data-dense dashboards—bridging low-level systems logic with clean, modern interfaces.</p>
-        <div class="hero-buttons">
-          <a href="#projects" class="cta-button primary cursor-pointer">
-            <span>View Featured Work</span>
-            <i class="fas fa-arrow-right"></i>
-          </a>
-          <a href="./assets/Michail_Farmakis.pdf" target="_blank" class="cta-button secondary cursor-pointer" download>
-            <span>Resume / CV</span>
-            <i class="fas fa-file-arrow-down"></i>
-          </a>
-          <a href="#contact" class="cta-button secondary cursor-pointer">
-            <span>Get In Touch</span>
-            <i class="fas fa-envelope"></i>
-          </a>
-        </div>
-        <div class="scroll-indicator">
-          <div class="scroll-arrow"></div>
-        </div>
-      </div>
-      <div class="hero-visual">
-        <div class="floating-elements">
-          <div class="floating-card" data-speed="2">
-            <i class="fab fa-react"></i>
-          </div>
-          <div class="floating-card" data-speed="3">
-            <i class="fab fa-node-js"></i>
-          </div>
-          <div class="floating-card" data-speed="1.5">
-            <i class="fas fa-terminal"></i>
-          </div>
-          <div class="floating-card" data-speed="2.5">
-            <i class="fas fa-database"></i>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- About Section -->
-    <section id="about" class="section">
-      <h2 class="section-title" data-aos="fade-up">About Me</h2>
-      <div class="about-container">
-        <div class="about-image-wrapper" data-aos="fade-right">
-          <div class="about-image-container">
-            <img src="assets/profile.jpg" alt="Michail Farmakis" class="about-image" />
-          </div>
-        </div>
-        <div class="about-content" data-aos="fade-left">
-          <h2 class="about-lead">Builder with a first-principles mindset.</h2>
-          <p>I focus on end-to-end software delivery: from architecting resilient backends and managing database state to designing responsive, information-dense user interfaces.</p>
-          <p>My academic foundation at the Department of Informatics & Telecommunications (NKUA) spans low-level systems programming in C/C++, assembly, and digital logic design on FPGAs. This dual exposure to low-level hardware constraints and modern web stacks allows me to write performant, predictable software across any layer.</p>
-          <div class="about-details">
-            <div class="about-detail-item">
-              <i class="fas fa-map-marker-alt"></i>
-              <span>Athens, Greece</span>
-            </div>
-            <div class="about-detail-item">
-              <i class="fas fa-graduation-cap"></i>
-              <span>B.Sc. Informatics & Telecoms (NKUA)</span>
-            </div>
-            <div class="about-detail-item">
-              <i class="fas fa-layer-group"></i>
-              <span>Full-Stack & Systems Architecture</span>
-            </div>
-            <div class="about-detail-item">
-              <i class="fas fa-box-open"></i>
-              <span>Open Source Contributor</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Featured Projects Section -->
-    <section id="projects" class="section">
-      <h2 class="section-title" data-aos="fade-up">Featured Engineering Projects</h2>
-      <div class="projects-grid">
-        <!-- Project 1: Udeler-Reborn -->
-        <div class="project-card" data-aos="fade-up">
-          <div class="project-image">
-            <img src="./assets/photos/udeler.png" alt="Udeler-Reborn Desktop Application" loading="lazy" />
-            <div class="project-overlay">
-              <div class="project-links">
-                <a href="https://github.com/M3rcena/Udeler-Reborn" target="_blank" title="View Source" class="cursor-pointer">
-                  <i class="fab fa-github"></i>
-                </a>
-              </div>
-            </div>
-          </div>
-          <div class="project-content">
-            <h4 class="project-title">Udeler-Reborn</h3>
-            <p class="project-description">Cross-platform desktop application revitalizing offline course and asset management. Built with Electron, TypeScript, and React, featuring resilient IPC communication, multi-threaded download stream queues, local caching, and automated multi-OS release builds using GitHub Actions.</p>
-            <div class="tech-stack">
-              <span class="tech-tag">TypeScript</span>
-              <span class="tech-tag">Electron</span>
-              <span class="tech-tag">React</span>
-              <span class="tech-tag">CI/CD</span>
-            </div>
-          </div>
-        </div>
-
-        <!-- Project 2: Burger Landing Page -->
-        <div class="project-card" data-aos="fade-up" data-aos-delay="100">
-          <div class="project-image">
-            <img src="./assets/photos/burgers.png" alt="Burger Landing Page" loading="lazy" />
-            <div class="project-overlay">
-              <div class="project-links">
-                <a href="https://m3rcena.github.io/projects/burgers.html" target="_blank" title="View Profile" class="cursor-pointer">
-                  <i class="fa fa-external-link"></i>
-                </a>
-                <a href="https://github.com/M3rcena/M3rcena.github.io/blob/main/projects/burgers.html" target="_blank" title="View Profile" class="cursor-pointer">
-                  <i class="fab fa-github"></i>
-                </a>
-              </div>
-            </div>
-          </div>
-          <div class="project-content">
-            <h4 class="project-title">Fast Food Landing Page</h3>
-            <p class="project-description">Redefining the fast-food aesthetic, I designed a Cyber-Industrial landing page for M3rcena's Burger that merges raw culinary grit with a futuristic interface. Built using Tailwind CSS, the site features a high-contrast dark mode, custom glitch animations, and a seamless, scrollbar-free user experience.</p>
-            <div class="tech-stack">
-              <span class="tech-tag">HTML</span>
-              <span class="tech-tag">CSS</span>
-              <span class="tech-tag">JavaScript</span>
-              <span class="tech-tag">Tailwind.CSS</span>
-            </div>
-          </div>
-        </div>
-
-        <!-- Project 3: ChronoGit GitHub App (Coming Soon) -->
-        <div class="project-card coming-soon-card" data-aos="fade-up" data-aos-delay="200" style="position: relative; overflow: hidden; border: 1px solid rgba(255, 255, 255, 0.1)">
-          <div style="position: absolute; top: 14px; right: 14px; z-index: 5; display: inline-flex; align-items: center; gap: 6px; padding: 4px 10px; border-radius: 9999px; background: rgba(16, 185, 129, 0.12); border: 1px solid rgba(16, 185, 129, 0.35); font-size: 0.72rem; font-weight: 600; color: #10b981; letter-spacing: 0.04em; text-transform: uppercase">
-            <span style="width: 7px; height: 7px; border-radius: 50%; background-color: #10b981; box-shadow: 0 0 8px #10b981; display: inline-block"></span>
-            In Active Development
-          </div>
-          <div class="project-image" style="background: radial-gradient(circle at 50% 50%, rgba(99, 102, 241, 0.22) 0%, rgba(15, 23, 42, 0.9) 100%); display: flex; align-items: center; justify-content: center; min-height: 190px">
-            <div style="text-align: center; padding: 2rem 1rem">
-              <div style="width: 60px; height: 60px; margin: 0 auto 12px; border-radius: 14px; background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255, 255, 255, 0.15); display: flex; align-items: center; justify-content: center; font-size: 1.8rem; color: #f8fafc; box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.5)">
-                <i class="fas fa-code-branch"></i>
-              </div>
-              <span style="font-family: monospace; font-size: 0.8rem; color: #94a3b8; letter-spacing: 0.08em; text-transform: uppercase"> GitHub App & Workbench </span>
-            </div>
-            <div class="project-overlay">
-              <div class="project-links">
-                <a href="https://github.com/M3rcena" target="_blank" title="Follow on GitHub" class="cursor-pointer">
-                  <i class="fab fa-github"></i>
-                </a>
-              </div>
-            </div>
-          </div>
-          <div class="project-content">
-            <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 6px">
-              <h4 class="project-title" style="margin-bottom: 0">ChronoGit</h3>
-              <span style="font-size: 0.75rem; color: #64748b; font-weight: 500; font-family: monospace">v0.1.0-alpha</span>
-            </div>
-            <p class="project-description">Automated documentation engine built on the GitHub Apps framework. Synchronizes dynamic directory architecture trees directly into README files on push events via verified app commits. Includes constant-time HMAC webhook security, WebAuthn passkey authentication, and a real-time configuration workbench.</p>
-            <div class="tech-stack">
-              <span class="tech-tag">GitHub Apps API</span>
-              <span class="tech-tag">TypeScript</span>
-              <span class="tech-tag">WebSockets</span>
-              <span class="tech-tag">WebAuthn</span>
-              <span class="tech-tag">Node.js</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Skills & Technologies -->
-    <section id="skills" class="section">
-      <h2 class="section-title" data-aos="fade-up">Technical Competencies</h2>
-      <p class="section-subtitle" data-aos="fade-up" data-aos-delay="50" style="text-align: center; color: #94a3b8; font-size: 0.95rem; margin-top: -1rem; margin-bottom: 2.5rem">Architectural layers, runtime systems, and toolchains I work across daily.</p>
-
-      <div class="skills-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 1.5rem; max-width: 1200px; margin: 0 auto; padding: 0 1rem">
-        <!-- 01. Frontend Engineering -->
-        <div class="competency-card" data-aos="fade-up" style="--accent: #38bdf8">
-          <div class="card-glow"></div>
-          <div class="card-header">
-            <div class="icon-orb">
-              <i class="fab fa-react"></i>
-            </div>
-            <div>
-              <span class="layer-tag">Layer 01</span>
-              <h4 class="competency-title">Frontend Engineering</h4>
-            </div>
-          </div>
-          <div class="focus-strip">
-            <i class="fas fa-terminal"></i>
-            <span>Focus: Responsive State, High-Density Visuals & IPC</span>
-          </div>
-          <div class="pill-group">
-            <span class="tech-pill highlight">TypeScript</span>
-            <span class="tech-pill highlight">React / Next.js</span>
-            <span class="tech-pill">Tailwind CSS</span>
-            <span class="tech-pill">Zustand / Redux</span>
-            <span class="tech-pill">WebSockets</span>
-            <span class="tech-pill">Canvas / SVG Data Displays</span>
-          </div>
-        </div>
-
-        <!-- 02. Backend & Distributed Systems -->
-        <div class="competency-card" data-aos="fade-up" data-aos-delay="100" style="--accent: #22c55e">
-          <div class="card-glow"></div>
-          <div class="card-header">
-            <div class="icon-orb">
-              <i class="fab fa-node-js"></i>
-            </div>
-            <div>
-              <span class="layer-tag">Layer 02</span>
-              <h4 class="competency-title">Backend & APIs</h4>
-            </div>
-          </div>
-          <div class="focus-strip">
-            <i class="fas fa-network-wired"></i>
-            <span>Focus: Event-Driven Pipelines & Cryptographic Verification</span>
-          </div>
-          <div class="pill-group">
-            <span class="tech-pill highlight">Node.js</span>
-            <span class="tech-pill highlight">Express</span>
-            <span class="tech-pill">REST & Webhooks</span>
-            <span class="tech-pill">WebAuthn / Passkeys</span>
-            <span class="tech-pill">HMAC Signature Verif</span>
-            <span class="tech-pill">Microservices</span>
-          </div>
-        </div>
-
-        <!-- 03. Desktop & Cross-Platform -->
-        <div class="competency-card" data-aos="fade-up" data-aos-delay="200" style="--accent: #818cf8">
-          <div class="card-glow"></div>
-          <div class="card-header">
-            <div class="icon-orb">
-              <i class="fas fa-desktop"></i>
-            </div>
-            <div>
-              <span class="layer-tag">Layer 03</span>
-              <h4 class="competency-title">Desktop & Native Tools</h4>
-            </div>
-          </div>
-          <div class="focus-strip">
-            <i class="fas fa-microchip"></i>
-            <span>Focus: Process Isolation, Offline Queues & Native FS</span>
-          </div>
-          <div class="pill-group">
-            <span class="tech-pill highlight">Electron</span>
-            <span class="tech-pill">Flutter / Dart</span>
-            <span class="tech-pill">ContextBridge IPC</span>
-            <span class="tech-pill">Background Queues</span>
-            <span class="tech-pill">Local Asset Caching</span>
-          </div>
-        </div>
-
-        <!-- 04. Systems & Hardware -->
-        <div class="competency-card" data-aos="fade-up" data-aos-delay="300" style="--accent: #f59e0b">
-          <div class="card-glow"></div>
-          <div class="card-header">
-            <div class="icon-orb">
-              <i class="fas fa-microchip"></i>
-            </div>
-            <div>
-              <span class="layer-tag">Layer 04</span>
-              <h4 class="competency-title">Systems & Low-Level</h4>
-            </div>
-          </div>
-          <div class="focus-strip">
-            <i class="fas fa-wave-square"></i>
-            <span>Focus: Deterministic Execution & Memory Profiling</span>
-          </div>
-          <div class="pill-group">
-            <span class="tech-pill highlight">C / C++</span>
-            <span class="tech-pill highlight">VHDL (Vivado)</span>
-            <span class="tech-pill">RISC-V Assembly</span>
-            <span class="tech-pill">FSM Design</span>
-            <span class="tech-pill">Timing Constraints</span>
-          </div>
-        </div>
-
-        <!-- 05. Data & Storage Engine -->
-        <div class="competency-card" data-aos="fade-up" data-aos-delay="400" style="--accent: #ec4899">
-          <div class="card-glow"></div>
-          <div class="card-header">
-            <div class="icon-orb">
-              <i class="fas fa-database"></i>
-            </div>
-            <div>
-              <span class="layer-tag">Layer 05</span>
-              <h4 class="competency-title">Data & Persistence</h4>
-            </div>
-          </div>
-          <div class="focus-strip">
-            <i class="fas fa-table"></i>
-            <span>Focus: Relational Modeling & Low-Latency Access</span>
-          </div>
-          <div class="pill-group">
-            <span class="tech-pill highlight">PostgreSQL</span>
-            <span class="tech-pill highlight">Prisma ORM</span>
-            <span class="tech-pill">Redis</span>
-            <span class="tech-pill">MySQL / SQLite</span>
-            <span class="tech-pill">Migrations & Indexing</span>
-          </div>
-        </div>
-
-        <!-- 06. DevOps & Infrastructure -->
-        <div class="competency-card" data-aos="fade-up" data-aos-delay="500" style="--accent: #06b6d4">
-          <div class="card-glow"></div>
-          <div class="card-header">
-            <div class="icon-orb">
-              <i class="fas fa-server"></i>
-            </div>
-            <div>
-              <span class="layer-tag">Layer 06</span>
-              <h4 class="competency-title">DevOps & Runtimes</h4>
-            </div>
-          </div>
-          <div class="focus-strip">
-            <i class="fas fa-shield-alt"></i>
-            <span>Focus: Automated Release Chains & Container Isolation</span>
-          </div>
-          <div class="pill-group">
-            <span class="tech-pill highlight">Docker</span>
-            <span class="tech-pill highlight">Ubuntu Server</span>
-            <span class="tech-pill">GitHub Actions CI/CD</span>
-            <span class="tech-pill">Nginx Proxies</span>
-            <span class="tech-pill">Cloudflare Tunnels</span>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Open Source & Package Registry Section -->
-    <section id="github-projects" class="section">
-      <h2 class="section-title" data-aos="fade-up">Open Source & Systems</h2>
-      <p class="section-subtitle" data-aos="fade-up" data-aos-delay="50" style="text-align: center; color: #94a3b8; font-size: 0.95rem; margin-top: -1rem; margin-bottom: 2.5rem">Published packages, native utilities, and public systems code.</p>
-
-      <div class="github-projects-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 1.5rem; max-width: 1200px; margin: 0 auto; padding: 0 1rem">
-        <!-- 01. @m3rcena/weky -->
-        <div class="oss-card" data-repo="m3rcena-weky" data-aos="fade-up" style="--card-tint: #f59e0b">
-          <div class="oss-header">
-            <div class="oss-identity">
-              <div class="oss-icon">
-                <i class="fab fa-npm"></i>
-              </div>
-              <div>
-                <span class="oss-scope">NPM Package Registry</span>
-                <h4 class="oss-title">@m3rcena/weky</h4>
-              </div>
-            </div>
-            <span class="oss-badge release repo-stars"><i class="fas fa-star"></i> 2</span>
-          </div>
-
-          <div
-            class="terminal-command"
-            onclick="
-              navigator.clipboard.writeText('npm i @m3rcena/weky');
-              this.classList.add('copied');
-              setTimeout(() => this.classList.remove('copied'), 1500);
-            "
-            title="Click to copy command"
-          >
-            <code><span class="prompt">$</span> npm i @m3rcena/weky</code>
-            <i class="fas fa-copy copy-icon cursor-pointer"></i>
-          </div>
-
-          <p class="oss-desc">Modular, type-safe gaming engine built for Discord.js bots. Provides zero-dependency interactive canvas and button components, structured state machines, and complete event handlers.</p>
-
-          <div class="oss-meta">
-            <div class="tech-pill-row">
-              <span class="tech-pill">TypeScript</span>
-              <span class="tech-pill">Node.js</span>
-              <span class="tech-pill">Discord.js</span>
-            </div>
-          </div>
-
-          <div class="oss-footer">
-            <span class="status-indicator"><i class="fas fa-circle live-dot"></i> Published Module</span>
-            <div class="oss-actions">
-              <a href="https://www.npmjs.com/package/@m3rcena/weky" target="_blank" class="icon-link cursor-pointer" title="View on npm">
-                <i class="fas fa-external-link-alt"></i>
-              </a>
-              <a href="https://github.com/M3rcena/m3rcena-weky" target="_blank" class="action-btn cursor-pointer"> <i class="fab fa-github"></i> Repository </a>
-            </div>
-          </div>
-        </div>
-
-        <!-- 02. Udeler-Reborn -->
-        <div class="oss-card" data-repo="Udeler-Reborn" data-aos="fade-up" data-aos-delay="100" style="--card-tint: #38bdf8">
-          <div class="oss-header">
-            <div class="oss-identity">
-              <div class="oss-icon">
-                <i class="fas fa-desktop"></i>
-              </div>
-              <div>
-                <span class="oss-scope">Desktop Client</span>
-                <h4 class="oss-title">Udeler-Reborn</h4>
-              </div>
-            </div>
-            <span class="oss-badge platform repo-stars"><i class="fas fa-star"></i> 62</span>
-          </div>
-
-          <div class="terminal-command" style="cursor: default">
-            <code><span class="prompt">release:</span> cross-platform-v3.x</code>
-            <i class="fas fa-archive" style="color: #64748b; font-size: 0.8rem"></i>
-          </div>
-
-          <p class="oss-desc">Maintained cross-platform desktop application orchestrating concurrent asset downloads, local caching strategies, and persistent state across multi-OS environments.</p>
-
-          <div class="oss-meta">
-            <div class="tech-pill-row">
-              <span class="tech-pill">Electron</span>
-              <span class="tech-pill">TypeScript</span>
-              <span class="tech-pill">React</span>
-              <span class="tech-pill">GitHub Actions</span>
-            </div>
-          </div>
-
-          <div class="oss-footer">
-            <span class="status-indicator"><i class="fas fa-cube"></i> Native Binary</span>
-            <div class="oss-actions">
-              <a href="https://github.com/M3rcena/Udeler-Reborn" target="_blank" class="action-btn cursor-pointer"> <i class="fab fa-github"></i> Repository </a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Studies & Education (Upgraded Systems Credentials) -->
-    <section id="experience" class="section">
-      <h2 class="section-title" data-aos="fade-up">Education & Credentials</h2>
-      <p class="section-subtitle" data-aos="fade-up" data-aos-delay="50" style="text-align: center; color: #94a3b8; font-size: 0.95rem; margin-top: -1rem; margin-bottom: 2.5rem">Formal academic grounding, core coursework, and professional certifications.</p>
-
-      <div class="education-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 1.5rem; max-width: 1200px; margin: 0 auto; padding: 0 1rem">
-        <!-- 01. NKUA University Degree -->
-        <div class="edu-card" data-aos="fade-up" style="--edu-tint: #38bdf8">
-          <div class="edu-header">
-            <div class="edu-icon">
-              <i class="fas fa-graduation-cap"></i>
-            </div>
-            <div>
-              <span class="edu-meta-tag">Undergraduate Studies</span>
-              <h4 class="edu-title">B.Sc. in Informatics & Telecommunications</h4>
-              <span class="edu-institution">National & Kapodistrian University of Athens (NKUA / ΕΚΠΑ)</span>
-            </div>
-          </div>
-
-          <p class="edu-desc">Rigorous computer science curriculum emphasizing foundational computer architecture, memory-safe data structures, discrete mathematics, and systems-level engineering.</p>
-
-          <div class="edu-coursework">
-            <span class="coursework-title">Key Laboratories & Topics:</span>
-            <div class="tech-pill-row">
-              <span class="tech-pill">Computer Architecture</span>
-              <span class="tech-pill">Operating Systems</span>
-              <span class="tech-pill">Data Structures (C/C++)</span>
-              <span class="tech-pill">Digital Logic & VHDL</span>
-              <span class="tech-pill">RISC-V Assembly</span>
-            </div>
-          </div>
-
-          <div class="edu-footer">
-            <span class="status-indicator"><i class="fas fa-circle live-dot"></i> In Progress</span>
-            <span class="edu-date">Athens, GR</span>
-          </div>
-        </div>
-
-        <!-- 02. Google IT Support Certificate -->
-        <div class="edu-card" data-aos="fade-up" data-aos-delay="100" style="--edu-tint: #22c55e">
-          <div class="edu-header">
-            <div class="edu-icon">
-              <i class="fab fa-google"></i>
-            </div>
-            <div>
-              <span class="edu-meta-tag">Professional Specialization</span>
-              <h4 class="edu-title">Google IT Support Professional</h4>
-              <span class="edu-institution">Google / Coursera</span>
-            </div>
-          </div>
-
-          <p class="edu-desc">Comprehensive hands-on training spanning network architecture, system administration, client-server security protocols, routing tables, and Linux environments.</p>
-
-          <div class="edu-coursework">
-            <span class="coursework-title">Key Competencies:</span>
-            <div class="tech-pill-row">
-              <span class="tech-pill">TCP/IP & Subnetting</span>
-              <span class="tech-pill">Linux SysAdmin</span>
-              <span class="tech-pill">DNS & Routing</span>
-              <span class="tech-pill">Security & Hardening</span>
-            </div>
-          </div>
-
-          <div class="edu-footer">
-            <span class="status-indicator"><i class="fas fa-check-circle" style="color: #22c55e"></i> Verified Credential</span>
-            <span class="edu-date">Professional Certificate</span>
-          </div>
-        </div>
-
-        <!-- 03. Applied Quantum Computing & AI -->
-        <div class="edu-card" data-aos="fade-up" data-aos-delay="200" style="--edu-tint: #a855f7">
-          <div class="edu-header">
-            <div class="edu-icon">
-              <i class="fas fa-atom"></i>
-            </div>
-            <div>
-              <span class="edu-meta-tag">Coursework & Foundations</span>
-              <h4 class="edu-title">Quantum Computing & AI Foundations</h4>
-              <span class="edu-institution">The Coding School / Qubit by Qubit</span>
-            </div>
-          </div>
-
-          <p class="edu-desc">Exploration of quantum mechanical principles applied to computing. Implemented state superposition, quantum gates, entanglement circuits, and foundational machine learning algorithms.</p>
-
-          <div class="edu-coursework">
-            <span class="coursework-title">Applied Frameworks:</span>
-            <div class="tech-pill-row">
-              <span class="tech-pill">IBM Qiskit</span>
-              <span class="tech-pill">Linear Algebra</span>
-              <span class="tech-pill">Quantum Circuits</span>
-              <span class="tech-pill">Python</span>
-            </div>
-          </div>
-
-          <div class="edu-footer">
-            <span class="status-indicator"><i class="fas fa-certificate" style="color: #c084fc"></i> Completed</span>
-            <span class="edu-date">2-Semester Program</span>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section id="contact" class="section">
-      <h2 class="section-title" data-aos="fade-up">Get In Touch</h2>
-      <div class="contact-grid">
-        <div class="contact-card" data-aos="fade-up">
-          <i class="fas fa-envelope contact-icon"></i>
-          <span class="contact-method-label">Email</span>
-          <a href="mailto:michail.frm@gmail.com" class="cursor-pointer">michail.frm@gmail.com</a>
-        </div>
-        <div class="contact-card" data-aos="fade-up" data-aos-delay="100">
-          <i class="fab fa-linkedin contact-icon"></i>
-          <span class="contact-method-label">LinkedIn</span>
-          <a href="https://www.linkedin.com/in/michail-farmakis/" target="_blank" class="cursor-pointer">Connect on LinkedIn</a>
-        </div>
-        <div class="contact-card" data-aos="fade-up" data-aos-delay="200">
-          <i class="fab fa-github contact-icon"></i>
-          <span class="contact-method-label">GitHub</span>
-          <a href="https://github.com/M3rcena" target="_blank" class="cursor-pointer">Explore My Code</a>
-        </div>
-      </div>
-    </section>
-
-    <div class="contact-form-container" data-aos="fade-up">
-      <h3 class="section-title">Send a Message</h3>
-      <form action="https://formspree.io/f/xqkrwepq" method="POST" id="contact-form">
-        <div class="form-group">
-          <label for="name" class="form-label">Name</label>
-          <input type="text" id="name" name="name" class="form-input" required />
-        </div>
-        <div class="form-group">
-          <label for="email" class="form-label">Email</label>
-          <input type="email" id="email" name="email" class="form-input" required />
-        </div>
-        <div class="form-group">
-          <label for="message" class="form-label">Message</label>
-          <textarea id="message" name="message" class="form-textarea" required></textarea>
-        </div>
-        <input type="hidden" name="_format" value="plain" />
-        <input type="text" name="_gotcha" style="display: none" />
-        <button type="submit" class="submit-button cursor-pointer">Send Message</button>
-        <div class="form-status"></div>
-      </form>
-    </div>
-
-    <!-- Scripts -->
-    <script src="./assets/external/aos.js" defer></script>
-    <script src="./assets/external/particles.min.js" defer></script>
-    <script src="./assets/js/script.js" defer></script>
-
-    <div class="background-animation" id="particles-js"></div>
-
-    <footer class="footer">
-      <div class="footer-content">
-        <p class="copyright">© <span id="year"></span> Michail Farmakis. Built with care and craft.</p>
-      </div>
-    </footer>
-
-    <!-- Service Worker Registration -->
-    <script>
-      if ("serviceWorker" in navigator) {
-        window.addEventListener("load", () => {
-          navigator.serviceWorker
-            .register("/sw.js")
-            .then((registration) => {
-              console.log("SW registered: ", registration);
-            })
-            .catch((registrationError) => {
-              console.log("SW registration failed: ", registrationError);
-            });
-        });
+    <!-- Schema.org JSON-LD Structured Data -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "Person",
+            "@id": "https://m3rcena.github.io/#person",
+            "name": "Michail Farmakis",
+            "alternateName": ["m3rcena", "Μιχαήλ Φαρμάκης"],
+            "url": "https://m3rcena.github.io/",
+            "image": "https://m3rcena.github.io/assets/profile.jpg",
+            "jobTitle": "Full-Stack Software Engineer",
+            "address": {
+              "@type": "PostalAddress",
+              "addressLocality": "Athens",
+              "addressCountry": "Greece"
+            },
+            "alumniOf": {
+              "@type": "CollegeOrUniversity",
+              "name": "National and Kapodistrian University of Athens",
+              "department": "Department of Informatics and Telecommunications",
+              "url": "https://www.di.uoa.gr/"
+            },
+            "sameAs": ["https://github.com/m3rcena", "https://www.linkedin.com/in/michail-farmakis", "https://www.npmjs.com/~m3rcena"],
+            "knowsAbout": ["Systems Programming", "C", "C++", "Assembly (x86-64 / MIPS)", "POSIX Multithreading & Semaphores", "Digital Logic & FPGA (VHDL / Vivado)", "Computer Networks & Sockets", "TypeScript", "React 18", "Electron", "Node.js", "Docker", "GitHub Actions CI/CD"]
+          },
+          {
+            "@type": "WebSite",
+            "@id": "https://m3rcena.github.io/#website",
+            "url": "https://m3rcena.github.io/",
+            "name": "Michail Farmakis Portfolio",
+            "description": "Production software, 6-tier architecture stack, and technical portfolio of Michail Farmakis (m3rcena).",
+            "publisher": {
+              "@id": "https://m3rcena.github.io/#person"
+            },
+            "inLanguage": ["en", "el"]
+          }
+        ]
       }
     </script>
+  </head>
+  <body class="bg-slate-950 text-slate-100 antialiased selection:bg-sky-500 selection:text-white">
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>
