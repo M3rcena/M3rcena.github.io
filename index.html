@@ -3,11 +3,11 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Michail Farmakis | Full-Stack Software Engineer &amp; CS Student @ NKUA</title>
+    <title>Michail Farmakis | Full-Stack Software Engineer</title>
 
     <!-- Primary SEO Metadata -->
-    <meta name="title" content="Michail Farmakis | Full-Stack Software Engineer &amp; CS Student @ NKUA" />
-    <meta name="description" content="Portfolio of Michail Farmakis (m3rcena) - Full-Stack Software Engineer &amp; Computer Science Student at NKUA Department of Informatics &amp; Telecommunications. Bridging low-level systems (C/C++, Assembly, FPGAs) with resilient modern web architectures, distributed backends, and high-performance desktop clients." />
+    <meta name="title" content="Michail Farmakis | Full-Stack Software Engineer" />
+    <meta name="description" content="Portfolio of Michail Farmakis (m3rcena), Software Engineer &amp; CS student at NKUA. Bridging low-level systems with resilient modern web architectures." />
     <meta name="keywords" content="Michail Farmakis, Μιχαήλ Φαρμάκης, m3rcena, Software Engineer, Full-Stack Developer, Systems Programming, C, C++, Assembly, POSIX, FPGA, VHDL, Vivado, React 18, TypeScript, Electron, Node.js, NKUA, National and Kapodistrian University of Athens, Athens Greece, Open Source" />
     <meta name="author" content="Michail Farmakis" />
     <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
@@ -22,10 +22,14 @@
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="Michail Farmakis Portfolio" />
     <meta property="og:url" content="https://m3rcena.github.io/" />
-    <meta property="og:title" content="Michail Farmakis | Full-Stack Software Engineer &amp; CS Student @ NKUA" />
-    <meta property="og:description" content="Bridging low-level systems programming (C/C++, Assembly, FPGAs) with resilient modern web architectures, distributed backends, and high-performance desktop clients." />
-    <meta property="og:image" content="https://m3rcena.github.io/assets/profile.jpg" />
-    <meta property="og:image:alt" content="Michail Farmakis - Software Engineer" />
+    <meta property="og:title" content="Michail Farmakis | Full-Stack Software Engineer" />
+    <meta property="og:description" content="Full-Stack Software Engineer &amp; CS student at NKUA. Bridging low-level systems with resilient modern web architectures." />
+    <meta property="og:image" content="https://m3rcena.github.io/assets/og-image.png" />
+    <meta property="og:image:secure_url" content="https://m3rcena.github.io/assets/og-image.png" />
+    <meta property="og:image:type" content="image/png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Michail Farmakis - Full-Stack Software Engineer Portfolio" />
     <meta property="og:locale" content="en_US" />
     <meta property="og:locale:alternate" content="el_GR" />
 
@@ -34,9 +38,12 @@
     <meta name="twitter:site" content="@m3rcena" />
     <meta name="twitter:creator" content="@m3rcena" />
     <meta name="twitter:url" content="https://m3rcena.github.io/" />
-    <meta name="twitter:title" content="Michail Farmakis | Full-Stack Software Engineer &amp; CS Student @ NKUA" />
-    <meta name="twitter:description" content="Explore production software, systems architecture, and open-source tooling by Michail Farmakis." />
-    <meta name="twitter:image" content="https://m3rcena.github.io/assets/profile.jpg" />
+    <meta name="twitter:title" content="Michail Farmakis | Full-Stack Software Engineer" />
+    <meta name="twitter:description" content="Full-Stack Software Engineer &amp; CS student at NKUA. Bridging low-level systems with resilient modern web architectures." />
+    <meta name="twitter:image" content="https://m3rcena.github.io/assets/og-image.png" />
+    <meta name="twitter:image:width" content="1200" />
+    <meta name="twitter:image:height" content="630" />
+    <meta name="twitter:image:alt" content="Michail Farmakis - Full-Stack Software Engineer Portfolio" />
 
     <!-- Mobile & PWA Theme Metadata -->
     <meta name="theme-color" content="#020617" />
@@ -48,6 +55,7 @@
     <link rel="icon" type="image/jpeg" href="/assets/profile.jpg" />
     <link rel="apple-touch-icon" href="/assets/profile.jpg" />
     <link rel="manifest" href="/manifest.json" />
+    <link rel="alternate" type="text/markdown" title="LLMs Context" href="/llms.txt" />
 
     <!-- Preconnect & Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -91,6 +99,66 @@
               "@id": "https://m3rcena.github.io/#person"
             },
             "inLanguage": ["en", "el"]
+          }
+        ]
+      }
+    </script>
+
+    <!-- WebMCP (Web Model Context Protocol) AI Agent Tools Schema -->
+    <script type="application/webmcp+json">
+      {
+        "$schema": "https://json-schema.org/draft-07/schema#",
+        "tools": [
+          {
+            "name": "sendContactMessage",
+            "description": "Submit a direct message or project collaboration inquiry to Michail Farmakis.",
+            "inputSchema": {
+              "type": "object",
+              "properties": {
+                "name": {
+                  "type": "string",
+                  "description": "Sender full name"
+                },
+                "email": {
+                  "type": "string",
+                  "format": "email",
+                  "description": "Sender email address for follow-up communications"
+                },
+                "message": {
+                  "type": "string",
+                  "description": "Detailed inquiry message or project scope"
+                }
+              },
+              "required": ["name", "email", "message"]
+            }
+          },
+          {
+            "name": "executeTerminalCommand",
+            "description": "Execute an interactive CLI command on Michail Farmakis portfolio terminal (e.g. help, neofetch, projects, skills, contact, clear, theme, exit).",
+            "inputSchema": {
+              "type": "object",
+              "properties": {
+                "command": {
+                  "type": "string",
+                  "description": "CLI command string to execute in terminal session"
+                }
+              },
+              "required": ["command"]
+            }
+          },
+          {
+            "name": "getPortfolioOverview",
+            "description": "Retrieve structured portfolio overview for Michail Farmakis including background, university, core competencies, and contact info.",
+            "inputSchema": {
+              "type": "object",
+              "properties": {
+                "language": {
+                  "type": "string",
+                  "enum": ["en", "el"],
+                  "description": "Preferred language code"
+                }
+              }
+            }
           }
         ]
       }

@@ -215,7 +215,17 @@ export default function ContactSection() {
                 : 'Fill in your message below. Dispatches are sent directly to my inbox via secure Formspree API.'}
             </p>
 
-            <form onSubmit={handleSendMessage} className="space-y-4 font-mono text-xs">
+            <form
+              onSubmit={handleSendMessage}
+              action="https://formspree.io/f/xqkrwepq"
+              method="POST"
+              toolname="sendContactMessage"
+              tooldescription="Submit a direct message or project collaboration inquiry to Michail Farmakis."
+              toolautosubmit="false"
+              data-toolname="sendContactMessage"
+              data-tooldescription="Submit a direct message or project collaboration inquiry to Michail Farmakis."
+              className="space-y-4 font-mono text-xs"
+            >
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div className="space-y-1.5">
                   <label htmlFor="contact-name" className="text-slate-300 font-bold block">
@@ -226,6 +236,8 @@ export default function ContactSection() {
                     name="name"
                     type="text"
                     required
+                    toolparamdescription="Sender's full name"
+                    data-toolparamdescription="Sender's full name"
                     value={senderName}
                     onChange={(e) => setSenderName(e.target.value)}
                     placeholder={t.contact.namePlaceholder}
@@ -241,6 +253,8 @@ export default function ContactSection() {
                     name="email"
                     type="email"
                     required
+                    toolparamdescription="Sender's email address for follow-up responses"
+                    data-toolparamdescription="Sender's email address for follow-up responses"
                     value={senderEmail}
                     onChange={(e) => setSenderEmail(e.target.value)}
                     placeholder={t.contact.emailPlaceholder}
@@ -258,6 +272,8 @@ export default function ContactSection() {
                   name="message"
                   required
                   rows={4}
+                  toolparamdescription="Detailed message text explaining inquiry, technical questions, or project scope"
+                  data-toolparamdescription="Detailed message text explaining inquiry, technical questions, or project scope"
                   value={message}
                   onChange={(e) => setMessage(e.target.value)}
                   placeholder={t.contact.messagePlaceholder}

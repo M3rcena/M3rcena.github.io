@@ -279,16 +279,24 @@ export default function InteractiveTerminal() {
           {/* Input Prompt */}
           <form
             onSubmit={handleSubmit}
+            toolname="executeTerminalCommand"
+            tooldescription="Execute an interactive CLI command on Michail Farmakis portfolio terminal (e.g. help, neofetch, projects, skills, contact, clear, theme, exit)."
+            toolautosubmit="true"
+            data-toolname="executeTerminalCommand"
+            data-tooldescription="Execute an interactive CLI command on Michail Farmakis portfolio terminal (e.g. help, neofetch, projects, skills, contact, clear, theme, exit)."
             className="p-2 sm:p-3 bg-slate-900 border-t border-slate-800 flex items-center gap-2 sm:gap-3 font-mono text-xs"
           >
             <span className="text-emerald-400 font-bold pl-1 sm:pl-2 shrink-0">
               <span className="hidden sm:inline">m3rcena@workstation:</span>~$
             </span>
             <input
+              name="command"
               type="text"
               value={input}
               onChange={(e) => setInput(e.target.value)}
               placeholder={t.terminal.placeholder}
+              toolparamdescription="CLI command string to run (e.g., help, neofetch, projects, skills, contact, clear, theme, exit)"
+              data-toolparamdescription="CLI command string to run (e.g., help, neofetch, projects, skills, contact, clear, theme, exit)"
               className="flex-1 bg-transparent text-white outline-none font-mono text-xs min-w-0"
             />
             <button

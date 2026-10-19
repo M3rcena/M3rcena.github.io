@@ -1,0 +1,34 @@
+# Michail Farmakis Portfolio
+
+> Michail Farmakis (m3rcena) is a Full-Stack Software Engineer and Computer Science Student at the National and Kapodistrian University of Athens (NKUA), Department of Informatics & Telecommunications. This site showcases his production engineering projects, systems architecture, open-source tools, and research background.
+
+Michail bridges low-level systems programming (C, C++, Assembly, POSIX multithreading, sockets, VHDL/FPGA) with resilient modern web architectures (React 18, TypeScript, Tailwind CSS, WebSockets) and distributed backend services.
+
+## Core Pages & Documents
+
+- [Homepage](https://m3rcena.github.io/): Main portfolio featuring interactive terminal, projects matrix, 6-tier architecture stack, skills telemetry, and contact channels.
+- [Curriculum Vitae (PDF)](https://m3rcena.github.io/assets/Michail_Farmakis.pdf): Comprehensive academic and professional resume of Michail Farmakis detailing education, coursework, honors, and technical competencies.
+- [Burger Builder Demo](https://m3rcena.github.io/projects/burgers.html): Interactive real-time ingredient composition and ordering engine built with vanilla TypeScript and CSS.
+- [XML Sitemap](https://m3rcena.github.io/sitemap.xml): Machine-readable XML sitemap indexing all public pages and alternate language versions.
+- [Robots Configuration](https://m3rcena.github.io/robots.txt): Crawler access policies and sitemap locator.
+
+## Featured Engineering Projects
+
+- [Smart Grid Edge IoT Simulator](https://github.com/m3rcena): High-concurrency telemetry simulation platform with C++ worker pools, POSIX shared memory, and real-time WebSocket distribution.
+- [Cross-Platform Resilient Chat Engine](https://github.com/m3rcena): End-to-end encrypted messaging application with offline SQLite synchronization, CRDT conflict resolution, and Electron desktop shell.
+- [Udeler Downloader Suite](https://github.com/m3rcena/udeler): High-throughput educational media downloader with concurrent chunk pipelines, adaptive bandwidth throttling, and cross-platform desktop UI.
+- [MIPS CPU Pipeline Simulator](https://github.com/m3rcena): Cycle-accurate hardware simulator modeling a 5-stage classic RISC pipeline with forwarding units and hazard detection.
+
+## Technical Skills Matrix
+
+- Systems Programming: C, C++, x86-64 Assembly, MIPS Assembly, POSIX Multithreading (pthreads), Inter-Process Communication (IPC), Sockets, VHDL, Vivado FPGA.
+- Web & Frontend: TypeScript, React 18, Vite, Tailwind CSS, Framer Motion, Web Audio API, Canvas Confetti, HTML5, Responsive UI/UX.
+- Backend & Distributed: Node.js, Express, Go, REST APIs, WebSockets, Redis, PostgreSQL, SQLite, Docker, Linux (Fedora/Ubuntu).
+- Tooling & Practices: Git, GitHub Actions CI/CD, Neovim, CMake, Make, Valgrind, GDB, Wireshark, Bash Scripting.
+
+## Contact & Profiles
+
+- Email: michail.frm@gmail.com
+- GitHub: https://github.com/m3rcena
+- LinkedIn: https://www.linkedin.com/in/michail-farmakis
+- Location: Athens, Greece
